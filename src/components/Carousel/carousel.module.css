@@ -1,0 +1,24 @@
+.box {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.carousel {
+  background: none;
+  transition: 1s;
+}
+.carets {
+  position: absolute;
+  fill: #493e3e;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
