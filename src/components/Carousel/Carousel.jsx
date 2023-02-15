@@ -29,27 +29,36 @@ let images = [
     alt=""
   />,
 ];
-
+export const CarouselItem =({children, width}) => {
+return (
+  <div className={styles.carousel-item} style={{width: width}}>
+    {children}
+  </div>
+)
+}
 export const Carousel = () => {
-  const [current, setCurrent] = useState(0);
-  const nextImage = () => {
-    if (current !== 4) {
-      setCurrent(current + 1);
-    } else {
-      setCurrent(0);
-    }
-  };
-  const prevImage = () => {
-    if (current !== 0) {
-      setCurrent(current - 1);
-    } else {
-      setCurrent(4);
-    }
-  };
+  // const [current, setCurrent] = useState(0);
+  // const nextImage = () => {
+  //   if (current !== images.length-1) {
+  //     setCurrent(current + 1);
+  //   } else {
+  //     setCurrent(0);
+  //   }
+  // };
+  // const prevImage = () => {
+  //   if (current !== 0) {
+  //     setCurrent(current - 1);
+  //   } else {
+  //     setCurrent(4);
+  //   }
+  // };
   return (
     <div className={styles.carousel}>
-      <div className={styles.box}>
-        <button
+      <div style={{transform: "translateX(-0%)"}} className={styles.box}>
+        {React.Children.map(children, (child, index) => {
+          return React.cloneElement(child, {width: "100"})
+        })}
+        {/* <button
           style={{ left: "5px" }}
           onClick={() => prevImage()}
           className={styles.carets}
@@ -63,7 +72,7 @@ export const Carousel = () => {
           className={styles.carets}
         >
           {rightCaret}
-        </button>
+        </button> */}
       </div>
     </div>
   );
