@@ -3,9 +3,15 @@ import { Main } from "../Main/Main";
 import { About } from "../About/About";
 import { Pricelist } from "../Pricelist/Pricelist";
 import React from "react";
-import { Link, Outlet, Route, Routes, useLocation } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import { motion } from "framer-motion";
-import { Carousel } from "../Carousel/Carousel";
 
 const PageLayout = ({ children }) => children;
 
@@ -50,24 +56,44 @@ export const Navigation = () => {
       <nav className={styles.navigation}>
         <ul className={styles.list}>
           <li className={styles.list__item}>
-            <Link className={styles.list__link} to="/">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${styles.active__link}` : `${styles.list__link}`
+              }
+              to="/"
+            >
               Главная
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.list__item}>
-            <Link className={styles.list__link} to="/About">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${styles.active__link}` : `${styles.list__link}`
+              }
+              to="/About"
+            >
               О нас
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.list__item}>
-            <Link className={styles.list__link} to="/Pricelist">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${styles.active__link}` : `${styles.list__link}`
+              }
+              to="/Pricelist"
+            >
               Цены
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.list__item}>
-            <Link className={styles.list__link} to="/Contacts">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? `${styles.active__link}` : `${styles.list__link}`
+              }
+              to="/Contacts"
+            >
               Контакты
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -76,7 +102,7 @@ export const Navigation = () => {
           <Route path="/" element={<Main />} />
           <Route path="/About" element={<About />} />
           <Route path="/Pricelist" element={<Pricelist />} />
-          <Route path="/Contacts" element={<Carousel />} />
+          {/* <Route path="/Contacts" element={<Carousel />} /> */}
         </Route>
       </Routes>
     </>

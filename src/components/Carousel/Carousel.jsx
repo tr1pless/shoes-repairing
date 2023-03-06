@@ -1,79 +1,71 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./carousel.module.css";
 import { leftCaret, rightCaret } from "../Constants";
 
-let images = [
-  <img
-    className={styles.carouselImage}
-    src="https://loremflickr.com/400/240"
-    alt=""
-  />,
-  <img
-    className={styles.carouselImage}
-    src="https://loremflickr.com/500/240"
-    alt=""
-  />,
-  <img
-    className={styles.carouselImage}
-    src="https://loremflickr.com/320/240"
-    alt=""
-  />,
-  <img
-    className={styles.carouselImage}
-    src="https://loremflickr.com/250/240"
-    alt=""
-  />,
-  <img
-    className={styles.carouselImage}
-    src="https://loremflickr.com/170/240"
-    alt=""
-  />,
-];
-export const CarouselItem =({children, width}) => {
-return (
-  <div className={styles.carousel-item} style={{width: width}}>
-    {children}
-  </div>
-)
-}
-export const Carousel = () => {
-  // const [current, setCurrent] = useState(0);
-  // const nextImage = () => {
-  //   if (current !== images.length-1) {
-  //     setCurrent(current + 1);
-  //   } else {
-  //     setCurrent(0);
-  //   }
-  // };
-  // const prevImage = () => {
-  //   if (current !== 0) {
-  //     setCurrent(current - 1);
-  //   } else {
-  //     setCurrent(4);
-  //   }
-  // };
+export const CarouselItem = ({ children, width }) => {
+  return (
+    <div className={styles.carousel__item} style={{ width: width }}>
+      {children}
+    </div>
+  );
+};
+const Carousel = ({ children }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const updateIndex = (newIndex) => {
+    if (newIndex < 0) {
+      newIndex = 0;
+    } else if (newIndex >= React.Children.count(children)) {
+      newIndex = React.Children.count(children) - 1;
+    }
+    setActiveIndex(newIndex);
+    console.log(activeIndex);
+  };
+
+  const preveous = () => {
+    if (activeIndex === 0) {
+      updateIndex(activeIndex + 4);
+    } else {
+      updateIndex(activeIndex - 1);
+    }
+  };
+
+  const next = () => {
+    if (activeIndex >= 2) {
+      updateIndex(activeIndex - 4);
+    } else {
+      updateIndex(activeIndex + 1);
+    }
+  };
+
   return (
     <div className={styles.carousel}>
-      <div style={{transform: "translateX(-0%)"}} className={styles.box}>
-        {React.Children.map(children, (child, index) => {
-          return React.cloneElement(child, {width: "100"})
-        })}
-        {/* <button
+      <div className={styles.boxWraper}>
+        <button
           style={{ left: "5px" }}
-          onClick={() => prevImage()}
+          onClick={() => preveous()}
           className={styles.carets}
         >
           {leftCaret}
         </button>
-        {images[current]}
         <button
           style={{ right: "5px" }}
-          onClick={() => nextImage()}
+          onClick={() => next()}
           className={styles.carets}
         >
           {rightCaret}
-        </button> */}
+        </button>
+        <div
+          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          className={styles.box}
+        >
+          {React.Children.map(children, (child, index) => {
+            return React.cloneElement(child, { width: "100%" });
+          })}
+        </div>
       </div>
     </div>
   );
 };
+
+export default Carousel;

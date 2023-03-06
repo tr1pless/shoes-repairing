@@ -1,30 +1,33 @@
-.box {
+.boxWraper {
   position: relative;
-  width: 500px;
-  height: 500px;
-  background: black;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+}
+.box {
   white-space: nowrap;
-  transition: transform 0.3s;
+  transition: transform 0.7s;
 }
 .carousel {
   background: none;
   transition: 1s;
-  overflow:hidden;
+  overflow: hidden;
 }
-.carousel-item {
+.carousel__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: black;
+  color: white;
+}
 
+.carets:hover {
+  transition: 0.3s;
+  transform: scale(1.3);
 }
+
 .carets {
+  z-index: 2;
   position: absolute;
   fill: #493e3e;
-}
-
-.carouselImage {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  background: none;
+  border: none;
 }

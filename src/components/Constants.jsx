@@ -26,6 +26,34 @@ export const aboutStyle = {
   alignItems: "center",
 };
 
+export const carouselShoes = {
+  backgroundImage: `url("./../assets/carouselShoes.jpg")`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  height: "500px",
+  width: "100%",
+  minWidth: "800px",
+};
+
+export const carouselKeys = {
+  backgroundImage: `url("./../assets/carouselKeys.jpg")`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  height: "500px",
+  width: "100%",
+};
+
+export const carouselSharping = {
+  backgroundImage: `url("./../assets/carouselSharping.jpg")`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  height: "500px",
+  width: "100%",
+};
+
 export const pricesStyle = {
   backgroundImage: `url("./../assets/pricesBg.jpg")`,
   backgroundSize: "cover",

@@ -9,6 +9,23 @@
 
   color: rgba(255, 255, 255, 0.7);
 }
+
+.active__link {
+  font-family: "Josefin Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: linear-gradient(
+    90deg,
+    rgba(17, 241, 220, 1) 0%,
+    rgba(29, 253, 119, 1) 49%,
+    rgba(69, 252, 90, 1) 100%
+  );
+  border-bottom: 2px solid linear-gradient(90deg, rgba(17,241,220,1) 0%, rgba(29,253,119,1) 49%, rgba(69,252,90,1) 100%));
+}
+
 li,
 a {
   list-style-type: none;
