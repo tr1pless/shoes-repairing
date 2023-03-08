@@ -6,17 +6,23 @@
   transition: transform 0.7s;
 }
 .carousel {
-  background: none;
+  background-color: #e5eceb4f;
   transition: 1s;
   overflow: hidden;
+  width: 70%;
+
+  background: rgba(11, 5, 5, 0.69);
+  border: 4px solid rgb(18 17 17 / 53%);
+  border-radius: 30px;
 }
 .carousel__item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 200px;
-  background-color: black;
+  /* background-color: black; */
   color: white;
+  height: 100%;
+  white-space: pre-wrap;
 }
 
 .carets:hover {
@@ -27,7 +33,8 @@
 .carets {
   z-index: 2;
   position: absolute;
-  fill: #493e3e;
+  fill: #dff4f0;
   background: none;
   border: none;
+  top: 40%;
 }

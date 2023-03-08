@@ -11,6 +11,7 @@ export const CarouselItem = ({ children, width }) => {
 };
 const Carousel = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [autoScroll, setAutoscroll] = useState(false);
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
@@ -19,10 +20,9 @@ const Carousel = ({ children }) => {
       newIndex = React.Children.count(children) - 1;
     }
     setActiveIndex(newIndex);
-    console.log(activeIndex);
   };
 
-  const preveous = () => {
+  const previous = () => {
     if (activeIndex === 0) {
       updateIndex(activeIndex + 4);
     } else {
@@ -38,12 +38,43 @@ const Carousel = ({ children }) => {
     }
   };
 
+  const start = () => {
+    setInterval(() => {
+      next();
+      // setAutoscroll(true);
+    }, 5000);
+    clearInterval();
+  };
+
+  useEffect(() => {
+    if (!autoScroll) {
+      start();
+    }
+  }, [activeIndex]);
+
+  // const start = () => {
+  // const interval = setInterval(() => {
+  // next();
+  // setAutoscroll(true);
+  // console.log("going");
+  // }, 5000);
+  // clearInterval(interval);
+  // };
+  // useEffect(() => {
+  // if (!pause) {
+  // start();
+  // } else if (autoScroll == true) {
+  // start();
+  // }
+  // console.log("bye");
+  // }, [activeIndex]);
+
   return (
     <div className={styles.carousel}>
       <div className={styles.boxWraper}>
         <button
           style={{ left: "5px" }}
-          onClick={() => preveous()}
+          onClick={() => previous()}
           className={styles.carets}
         >
           {leftCaret}

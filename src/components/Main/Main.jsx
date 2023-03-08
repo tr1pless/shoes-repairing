@@ -42,13 +42,34 @@ export const Main = () => {
       <section style={mainStyle}>
         <Carousel>
           <CarouselItem>
-            <span style={carouselShoes}></span>
+            {/* <span style={carouselShoes}> */}
+            <p className={styles.carousel__text}>
+              1111Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Debitis deleniti asperiores ea odio aliquam nemo voluptates? Et,
+              consequuntur. Inventore fuga atque facilis culpa ducimus earum
+              magni quos quia dolorum adipisci.
+            </p>
+            {/* </span> */}
           </CarouselItem>
           <CarouselItem>
-            <span style={carouselKeys}></span>
+            {/* <span style={carouselKeys}> */}
+            <p className={styles.carousel__text}>
+              2222Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Debitis deleniti asperiores ea odio aliquam nemo voluptates? Et,
+              consequuntur. Inventore fuga atque facilis culpa ducimus earum
+              magni quos quia dolorum adipisci.
+            </p>
+            {/* </span> */}
           </CarouselItem>
           <CarouselItem>
-            <span style={carouselSharping}></span>
+            {/* <span style={carouselSharping}> */}
+            <p className={styles.carousel__text}>
+              333Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Debitis deleniti asperiores ea odio aliquam nemo voluptates? Et,
+              consequuntur. Inventore fuga atque facilis culpa ducimus earum
+              magni quos quia dolorum adipisci.
+            </p>
+            {/* </span> */}
           </CarouselItem>
         </Carousel>
         {/* <div className={styles.welcome}> */}
