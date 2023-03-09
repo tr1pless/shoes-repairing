@@ -1,0 +1,37 @@
+.contacts {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.contacts__mapButton {
+  background: none;
+  margin: 0;
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-right: none;
+  border-left: 60px solid green;
+}
+
+.contacts__mapWrp {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contacts__map {
+  transition: 0.4s;
+  margin-right: 0;
+  width: 800px;
+  height: 400px;
+  background: rgba(11, 5, 5, 0.69);
+  border: 5px solid rgba(0, 0, 0, 0.53);
+  border-radius: 0 30px 30px 0;
+}
+
+.contacts__apiMap {
+  margin: 25px;
+}

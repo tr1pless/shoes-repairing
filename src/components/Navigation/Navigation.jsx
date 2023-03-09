@@ -2,6 +2,7 @@ import styles from "./navigation.module.css";
 import { Main } from "../Main/Main";
 import { About } from "../About/About";
 import { Pricelist } from "../Pricelist/Pricelist";
+import { Contacts } from "../Conctacts/Conctacts";
 import React from "react";
 import {
   Link,
@@ -102,7 +103,7 @@ export const Navigation = () => {
           <Route path="/" element={<Main />} />
           <Route path="/About" element={<About />} />
           <Route path="/Pricelist" element={<Pricelist />} />
-          {/* <Route path="/Contacts" element={<Carousel />} /> */}
+          <Route path="/Contacts" element={<Contacts />} />
         </Route>
       </Routes>
     </>
