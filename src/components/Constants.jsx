@@ -65,6 +65,7 @@ export const pricesStyle = {
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "column",
+  whiteSpace: "pre-wrap",
 };
 export const leftCaret = (
   <svg

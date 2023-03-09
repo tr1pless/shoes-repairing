@@ -11,8 +11,7 @@ export const CarouselItem = ({ children, width }) => {
 };
 const Carousel = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [autoScroll, setAutoscroll] = useState(false);
-
+  const [mlsec, setMlsec] = useState(5000);
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
       newIndex = 0;
@@ -25,52 +24,41 @@ const Carousel = ({ children }) => {
   const previous = () => {
     if (activeIndex === 0) {
       updateIndex(activeIndex + 4);
+      return () => clearInterval(interval);
     } else {
       updateIndex(activeIndex - 1);
+      return () => clearInterval(interval);
     }
   };
 
   const next = () => {
     if (activeIndex >= 2) {
       updateIndex(activeIndex - 4);
+      return () => clearInterval(interval);
     } else {
       updateIndex(activeIndex + 1);
+      return () => clearInterval(interval);
     }
-  };
-
-  const start = () => {
-    setInterval(() => {
-      next();
-      // setAutoscroll(true);
-    }, 5000);
-    clearInterval();
   };
 
   useEffect(() => {
-    if (!autoScroll) {
-      start();
-    }
+    const interval = setInterval(() => {
+      next();
+      console.log(activeIndex);
+    }, mlsec);
+    return () => clearInterval(interval);
   }, [activeIndex]);
 
-  // const start = () => {
-  // const interval = setInterval(() => {
-  // next();
-  // setAutoscroll(true);
-  // console.log("going");
-  // }, 5000);
-  // clearInterval(interval);
-  // };
-  // useEffect(() => {
-  // if (!pause) {
-  // start();
-  // } else if (autoScroll == true) {
-  // start();
-  // }
-  // console.log("bye");
-  // }, [activeIndex]);
-
   return (
-    <div className={styles.carousel}>
+    <div
+      onMouseEnter={() => {
+        setMlsec(30000);
+      }}
+      onMouseLeave={() => {
+        setMlsec(5000);
+      }}
+      className={styles.carousel}
+    >
       <div className={styles.boxWraper}>
         <button
           style={{ left: "5px" }}
