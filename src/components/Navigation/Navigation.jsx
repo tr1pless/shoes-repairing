@@ -5,7 +5,6 @@ import { Pricelist } from "../Pricelist/Pricelist";
 import { Contacts } from "../Conctacts/Conctacts";
 import React from "react";
 import {
-  Link,
   NavLink,
   Outlet,
   Route,

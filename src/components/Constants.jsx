@@ -67,6 +67,17 @@ export const pricesStyle = {
   flexDirection: "column",
   whiteSpace: "pre-wrap",
 };
+
+export const contactsStyle = {
+  //   backgroundImage: `url("/rez/images/wpMain.jpg")`,
+  backgroundImage: `url("./../assets/contactsBg.jpg")`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  height: "100vh",
+  width: "100%",
+  margin: '0'
+};
 export const leftCaret = (
   <svg
     style={{ height: "40px" }}
@@ -100,3 +111,42 @@ export const rightCaret = (
     />
   </svg>
 );
+
+export const phoneImage = {
+  backgroundImage: `url("./../assets/phone.png")`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  justifyContent: "center",
+  alignItems: "center",
+  width: '28px',
+  height: "28px",
+  display: 'block',
+  marginRight: "15px"
+}
+
+export const whatsappImage = {
+  backgroundImage: `url("./../assets/whatsapp.png")`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  justifyContent: "center",
+  alignItems: "center",
+  width: '28px',
+  height: "28px",
+  display: 'block',
+  marginRight: "15px"
+}
+
+export const mailImage = {
+  backgroundImage: `url("./../assets/mail.png")`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  justifyContent: "center",
+  alignItems: "center",
+  width: '28px',
+  height: "28px",
+  display: 'block',
+  marginRight: "15px"
+}
