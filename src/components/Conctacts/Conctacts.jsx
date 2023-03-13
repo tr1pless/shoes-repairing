@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { contactsStyle, mailImage, phoneImage, whatsappImage } from "../Constants";
+import {
+  contactsStyle,
+  mailImage,
+  phoneImage,
+  whatsappImage,
+  serviceContacts,
+  mapArrow,
+  mapClose,
+} from "../Constants";
 import styles from "./contacts.module.css";
 
 export const Contacts = () => {
@@ -7,9 +15,7 @@ export const Contacts = () => {
 
   return (
     <>
-      <div
-      style={contactsStyle}
-      className={styles.contacts}>
+      <div style={contactsStyle} className={styles.contacts}>
         <div className={styles.contacts__mapWrp}>
           <div
             style={{ marginLeft: `${active ? 0 : -805}px` }}
@@ -29,28 +35,67 @@ export const Contacts = () => {
             ></iframe>
           </div>
           <button
-          style={{display:`${active? "none": "block"}`}}
+            style={{ display: `${active ? "none" : "block"}` }}
             className={styles.contacts__mapButtonOpen}
             onClick={() => {
               setActive(!active), console.log(active);
             }}
-          ></button>
+          >
+            {mapArrow}
+          </button>
           <button
-          style={{display:`${active? "block": "none"}`}}
+            style={{ display: `${active ? "block" : "none"}` }}
             className={styles.contacts__mapButtonClose}
             onClick={() => {
               setActive(!active), console.log(active);
             }}
-          ></button>
+          >
+            {mapClose}
+          </button>
         </div>
         <div className={styles.contacts__list}>
-          <ul>
-            <li style={{marginBottom: "15px"}} className={styles.contacts__listItem}><a href="#" className={styles.contacts__listLink}><span style={mailImage}/>rivasiela4@gmail.com</a></li>
-            <li style={{marginBottom: "15px"}} className={styles.contacts__listItem}><a href="#" className={styles.contacts__listLink}><span style={phoneImage}/>+37129730629</a></li>
-            <li className={styles.contacts__listItem}><a href="#" className={styles.contacts__listLink}><span style={whatsappImage}/>+37129730629</a></li>
+          <ul className={styles.contacts__linksList}>
+            <li
+              style={{ marginBottom: "25px", paddingTop: "30px" }}
+              className={styles.contacts__listItem}
+            >
+              <a
+                href="mailto: rivasiela4@gmail.com"
+                className={styles.contacts__listLink}
+                target="_blank"
+              >
+                <span style={mailImage} />
+                {serviceContacts[0].email}
+              </a>
+            </li>
+            <li
+              style={{ marginBottom: "25px" }}
+              className={styles.contacts__listItem}
+            >
+              <a
+                href="tel:+37129730629"
+                className={styles.contacts__listLink}
+                target="_blank"
+              >
+                <span style={phoneImage} />
+                {serviceContacts[0].phone}
+              </a>
+            </li>
+            <li
+              className={styles.contacts__listItem}
+              style={{ paddingBottom: "30px" }}
+            >
+              <a
+                href="https://wa.me/+37129730629"
+                className={styles.contacts__listLink}
+                target="_blank"
+              >
+                <span style={whatsappImage} />
+                {serviceContacts[0].phone}
+              </a>
+            </li>
           </ul>
         </div>
-        
       </div>
     </>
   );

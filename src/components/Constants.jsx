@@ -76,7 +76,7 @@ export const contactsStyle = {
   backgroundPosition: "center",
   height: "100vh",
   width: "100%",
-  margin: '0'
+  margin: "0",
 };
 export const leftCaret = (
   <svg
@@ -119,11 +119,11 @@ export const phoneImage = {
   backgroundPosition: "center",
   justifyContent: "center",
   alignItems: "center",
-  width: '28px',
+  width: "28px",
   height: "28px",
-  display: 'block',
-  marginRight: "15px"
-}
+  display: "block",
+  marginRight: "15px",
+};
 
 export const whatsappImage = {
   backgroundImage: `url("./../assets/whatsapp.png")`,
@@ -132,11 +132,11 @@ export const whatsappImage = {
   backgroundPosition: "center",
   justifyContent: "center",
   alignItems: "center",
-  width: '28px',
+  width: "28px",
   height: "28px",
-  display: 'block',
-  marginRight: "15px"
-}
+  display: "block",
+  marginRight: "15px",
+};
 
 export const mailImage = {
   backgroundImage: `url("./../assets/mail.png")`,
@@ -145,8 +145,40 @@ export const mailImage = {
   backgroundPosition: "center",
   justifyContent: "center",
   alignItems: "center",
-  width: '28px',
+  width: "28px",
   height: "28px",
-  display: 'block',
-  marginRight: "15px"
-}
+  display: "block",
+  marginRight: "15px",
+};
+
+export const serviceContacts = [
+  {
+    email: "rivasiela4@gmail.com",
+    phone: "+37129730629",
+  },
+];
+
+export const mapArrow = (
+  <svg
+    style={{ marginLeft: "-3px" }}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="white"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
+  </svg>
+);
+
+export const mapClose = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="white"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+  </svg>
+);
