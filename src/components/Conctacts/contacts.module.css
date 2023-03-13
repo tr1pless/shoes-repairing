@@ -90,3 +90,35 @@
   border: 5px solid rgba(0, 0, 0, 0.16);
   border-radius: 30px 0 0 30px;
 }
+
+@media screen and (max-width:767px) {
+  .contacts{
+    
+    min-height: 100vh;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .contacts__mapWrp {
+    padding-top: 100px;
+    width: 90%;
+    max-width: 700px;
+  }
+  .contacts__apiMap {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .contacts__list {
+    position: absolute;
+    right: -5px;
+    bottom: 10px;
+    width: 100%;
+  }
+  .contacts__linksList{
+    margin-bottom: 0;
+    padding-right: 100%;
+  }
+}

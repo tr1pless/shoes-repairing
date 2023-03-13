@@ -35,3 +35,9 @@
   align-items: center;
   line-height: 46px;
 }
+
+@media screen and (max-width:767px) {
+  .carousel__text {
+  margin: 150px 100px 50px;
+}
+}

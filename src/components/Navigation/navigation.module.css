@@ -60,3 +60,16 @@ a {
   justify-content: space-between;
   flex-direction: row;
 }
+
+
+@media screen and (max-width:767px) { 
+  .active__link {
+    font-size: 21px;
+  }
+  .list__link{
+    font-size: 19px;
+  }
+  .navigation{
+    height: 8%;
+  }
+}

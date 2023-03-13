@@ -74,8 +74,7 @@ export const contactsStyle = {
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
-  height: "100vh",
-  width: "100%",
+  overflow:"hidden",
   margin: "0",
 };
 export const leftCaret = (

@@ -8,7 +8,7 @@ export const Main = () => {
   return (
     <>
       <section style={mainStyle}>
-        <Carousel>
+        <Carousel >
           <CarouselItem>
             <p className={styles.carousel__text}>
               1111Lorem ipsum dolor sit amet consectetur adipisicing elit.

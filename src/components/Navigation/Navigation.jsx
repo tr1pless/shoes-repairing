@@ -5,7 +5,7 @@ import { Pricelist } from "../Pricelist/Pricelist";
 import { Contacts } from "../Conctacts/Conctacts";
 import React from "react";
 import { NavLink, Outlet, Route, Routes, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+import { addScaleCorrector, motion } from "framer-motion";
 import { lat, rus } from "../language/navigation.json";
 import { useSelector, useDispatch } from "react-redux";
 import { language } from "../store/counterSlice";
@@ -15,26 +15,27 @@ const PageLayout = ({ children }) => children;
 
 const pageVariants = {
   initial: {
-    opacity: 0,
+    opacity: 0.9,
   },
   in: {
     opacity: 1,
   },
   out: {
-    opacity: 0,
+    
+    opacity: 0.7,
   },
 };
 
 const pageTransition = {
-  type: "tween",
-  ease: "anticipate",
-  duration: 0.5,
+  delay: 0.2,
+  type: "spring",
+  duration: 2,
 };
 
 const AnimationLayout = () => {
   const { pathname } = useLocation();
   return (
-    <PageLayout>
+    <PageLayout >
       <motion.div
         key={pathname}
         initial="initial"
@@ -58,7 +59,7 @@ export const Navigation = () => {
           className={styles.navigation__lvru}
           onClick={() => dispatch(language())}
         >
-          {lang == 0 ? latvian : russian}
+          {lang == 0 ?  latvian : russian}
         </button>
 
         <ul className={styles.list}>
