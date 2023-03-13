@@ -4,14 +4,12 @@ import { About } from "../About/About";
 import { Pricelist } from "../Pricelist/Pricelist";
 import { Contacts } from "../Conctacts/Conctacts";
 import React from "react";
-import {
-  NavLink,
-  Outlet,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { NavLink, Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { lat, rus } from "../language/navigation.json";
+import { useSelector, useDispatch } from "react-redux";
+import { language } from "../store/counterSlice";
+import { latvian, russian } from "../Constants";
 
 const PageLayout = ({ children }) => children;
 
@@ -51,9 +49,18 @@ const AnimationLayout = () => {
 };
 
 export const Navigation = () => {
+  const lang = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
   return (
     <>
       <nav className={styles.navigation}>
+        <button
+          className={styles.navigation__lvru}
+          onClick={() => dispatch(language())}
+        >
+          {lang == 0 ? latvian : russian}
+        </button>
+
         <ul className={styles.list}>
           <li className={styles.list__item}>
             <NavLink
@@ -62,7 +69,7 @@ export const Navigation = () => {
               }
               to="/"
             >
-              Главная
+              {lang == 1 ? lat.main : rus.main}
             </NavLink>
           </li>
           <li className={styles.list__item}>
@@ -72,7 +79,7 @@ export const Navigation = () => {
               }
               to="/About"
             >
-              О нас
+              {lang == 1 ? lat.about : rus.about}
             </NavLink>
           </li>
           <li className={styles.list__item}>
@@ -82,7 +89,7 @@ export const Navigation = () => {
               }
               to="/Pricelist"
             >
-              Цены
+              {lang == 1 ? lat.pricelist : rus.pricelist}
             </NavLink>
           </li>
           <li className={styles.list__item}>
@@ -92,7 +99,7 @@ export const Navigation = () => {
               }
               to="/Contacts"
             >
-              Контакты
+              {lang == 1 ? lat.contacts : rus.contacts}
             </NavLink>
           </li>
         </ul>

@@ -38,7 +38,7 @@ export const Contacts = () => {
             style={{ display: `${active ? "none" : "block"}` }}
             className={styles.contacts__mapButtonOpen}
             onClick={() => {
-              setActive(!active), console.log(active);
+              setActive(!active);
             }}
           >
             {mapArrow}
@@ -47,7 +47,7 @@ export const Contacts = () => {
             style={{ display: `${active ? "block" : "none"}` }}
             className={styles.contacts__mapButtonClose}
             onClick={() => {
-              setActive(!active), console.log(active);
+              setActive(!active);
             }}
           >
             {mapClose}

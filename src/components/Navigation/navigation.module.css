@@ -7,6 +7,16 @@
   line-height: 28px;
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+.navigation__lvru {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 22px;
+  left: 4%;
 }
 
 .active__link {

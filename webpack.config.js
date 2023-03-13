@@ -31,6 +31,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.json$/,
+        use: ["json-loader"],
+        type: "javascript/auto",
+      },
+      {
         test: /\.(png|jpg|gif)$/i,
         type: "asset",
         parser: {

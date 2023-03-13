@@ -44,7 +44,6 @@ const Carousel = ({ children }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       next();
-      console.log(activeIndex);
     }, mlsec);
     return () => clearInterval(interval);
   }, [activeIndex]);

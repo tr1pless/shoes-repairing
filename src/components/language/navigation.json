@@ -1,0 +1,14 @@
+{
+    "rus":{
+        "main":"Главная",
+        "about":"О нас",
+        "pricelist":"Цены",
+        "contacts": "Контакты"
+    },
+    "lat":{
+        "main":"Sākums",
+        "about":"Par mums",
+        "pricelist":"Cenas",
+        "contacts": "Kontakti"
+    }
+}

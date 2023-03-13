@@ -182,3 +182,24 @@ export const mapClose = (
     <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
   </svg>
 );
+
+export const latvian = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+    <rect fill="#9E3039" width="1200" height="25"></rect>
+    <rect fill="#fff" y="8" width="1200" height="8"></rect>
+  </svg>
+);
+
+export const russian = (
+  <svg
+    style={{ marginTop: "-3px" }}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 9 6"
+    width="30"
+    height="30"
+  >
+    <rect fill="#fff" width="9" height="3" />
+    <rect fill="#d52b1e" y="4" width="9" height="3" />
+    <rect fill="#0039a6" y="2" width="9" height="3" />
+  </svg>
+);
