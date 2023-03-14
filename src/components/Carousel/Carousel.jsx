@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./carousel.module.css";
 import { leftCaret, rightCaret } from "../Constants";
+import { rus } from "../language/main.json";
 
 export const CarouselItem = ({ children, width }) => {
   return (
@@ -12,6 +13,10 @@ export const CarouselItem = ({ children, width }) => {
 const Carousel = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [mlsec, setMlsec] = useState(5000);
+
+  const rusText = Object.entries(rus.text);
+  const carouselValue = rusText.length;
+
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
       newIndex = 0;
@@ -23,7 +28,7 @@ const Carousel = ({ children }) => {
 
   const previous = () => {
     if (activeIndex === 0) {
-      updateIndex(activeIndex + 4);
+      updateIndex(carouselValue);
       return () => clearInterval(interval);
     } else {
       updateIndex(activeIndex - 1);
@@ -32,8 +37,8 @@ const Carousel = ({ children }) => {
   };
 
   const next = () => {
-    if (activeIndex >= 2) {
-      updateIndex(activeIndex - 4);
+    if (activeIndex >= carouselValue - 1) {
+      updateIndex(activeIndex - carouselValue + 1);
       return () => clearInterval(interval);
     } else {
       updateIndex(activeIndex + 1);

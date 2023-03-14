@@ -8,7 +8,6 @@ export const counterSlice = createSlice({
   reducers: {
     language: (state) => {
       state.value = !state.value;
-      console.log(state.value);
     },
   },
 });
