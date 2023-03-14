@@ -1,3 +1,11 @@
+.about__container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .features {
   width: 35%;
   background: rgba(11, 5, 5, 0.69);
@@ -21,6 +29,11 @@
   width: 90%;
   margin-left: 30px;
 }
+
+.features__firstBox {
+  margin: 5% 0 0 30px;
+}
+
 .features__title {
   font-family: "Jost";
   font-style: normal;
@@ -69,4 +82,38 @@
   text-align: center;
   margin: 20px 40px;
   color: #fdfdfd;
+}
+
+@media screen and (max-width: 1500px) {
+  .about__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .features {
+    width: 90%;
+    position: absolute;
+    left: -2px;
+    top: 100px;
+  }
+
+  .about__feturesList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .aboutUs {
+    margin: 0;
+    position: absolute;
+    right: -2px;
+    bottom: 50px;
+    width: 80%;
+  }
+
+  .features__firstBox {
+    margin: 0;
+  }
 }

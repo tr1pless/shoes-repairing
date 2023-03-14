@@ -10,6 +10,7 @@
   text-transform: uppercase;
 }
 .navigation__lvru {
+  opacity: 0.5;
   margin: 0;
   padding: 0;
   background: none;
@@ -17,6 +18,12 @@
   position: absolute;
   top: 22px;
   left: 4%;
+  transition: 1s;
+}
+
+.navigation__lvru:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .active__link {
@@ -61,15 +68,15 @@ a {
   flex-direction: row;
 }
 
-
-@media screen and (max-width:767px) { 
+@media screen and (max-width: 767px) {
   .active__link {
     font-size: 21px;
   }
-  .list__link{
+  .list__link {
     font-size: 19px;
   }
-  .navigation{
+
+  .navigation {
     height: 8%;
   }
 }

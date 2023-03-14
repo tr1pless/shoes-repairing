@@ -21,7 +21,6 @@ const pageVariants = {
     opacity: 1,
   },
   out: {
-    
     opacity: 0.7,
   },
 };
@@ -35,7 +34,7 @@ const pageTransition = {
 const AnimationLayout = () => {
   const { pathname } = useLocation();
   return (
-    <PageLayout >
+    <PageLayout>
       <motion.div
         key={pathname}
         initial="initial"
@@ -59,7 +58,7 @@ export const Navigation = () => {
           className={styles.navigation__lvru}
           onClick={() => dispatch(language())}
         >
-          {lang == 0 ?  latvian : russian}
+          {lang == 0 ? latvian : russian}
         </button>
 
         <ul className={styles.list}>

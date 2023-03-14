@@ -1,3 +1,9 @@
+.pricelist__container {
+  min-height: 100vh;
+}
+.pl__columnsContainer {
+  display: flex;
+}
 .pl__listContainer {
   background: rgba(23, 16, 16, 0.53);
   border: 3px solid #625a5a;
@@ -8,9 +14,7 @@
 img {
   padding-left: 39px;
 }
-.pl__knife {
-  margin-top: 10px;
-}
+
 .pl__listTitle {
   font-family: "Josefin Slab";
   font-style: normal;
@@ -21,6 +25,11 @@ img {
 
   color: #ffffff;
 }
+
+.pl__itemListSecond {
+  padding-top: 61px;
+}
+
 .pl__list {
   background: rgba(0, 0, 0, 0.59);
   border: 3px solid rgba(6, 10, 11, 0.23);
@@ -84,6 +93,7 @@ img {
   transition: all 0.3s;
   position: relative;
   background-color: #10171866;
+  margin-bottom: 15px;
 }
 .extraButton span {
   transition: all 0.3s;
@@ -127,4 +137,31 @@ img {
 .extraButton:hover::after {
   opacity: 0;
   transform: scale(0.1, 1);
+}
+
+@media screen and (min-width: 900px) and (max-width: 1500px) {
+  .pl__listContainer {
+    margin-top: 105px;
+    width: 97%;
+  }
+
+  .pl__columnsContainer {
+    flex-direction: column;
+  }
+
+  li {
+    font-size: 21px;
+  }
+  .pl__columnsContainerFirst {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  li {
+    font-size: 23px;
+  }
+  .pl__listContainer {
+    width: 97%;
+  }
 }

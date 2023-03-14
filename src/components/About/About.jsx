@@ -5,12 +5,11 @@ import styles from "./about.module.css";
 export const About = () => {
   return (
     <>
-      <section style={aboutStyle}>
+      <section className={styles.about__container} style={aboutStyle}>
         <div className={styles.features}>
-          <ul>
+          <ul className={styles.about__feturesList}>
             <div
-              style={{ margin: "5% 0 0 30px" }}
-              className={styles.features__wrp}
+              className={`${styles.features__wrp} + ${styles.features__firstBox}`}
             >
               <li className={styles.features__titleWrp}>
                 <span className={styles.feature__icons}>

@@ -91,9 +91,33 @@
   border-radius: 30px 0 0 30px;
 }
 
-@media screen and (max-width:767px) {
-  .contacts{
-    
+.contacts__address {
+  color: white;
+  opacity: 0.7;
+  font-size: 17px;
+  margin: 0 0 15px 0;
+  padding: 0;
+}
+.contacts__pointerWrp {
+  transform: matrix(1, 0, 0, 1, -9, -37);
+  transition: 1s;
+}
+
+.contacts__mapPointer {
+  width: 96px;
+  height: 50px;
+  transform: rotate(280deg);
+}
+
+.contacts__mapPointerTxt {
+  transform: matrix(1, 0, 0, 1, 90, -14);
+  font-size: 20px;
+  color: blue;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 767px) {
+  .contacts {
     min-height: 100vh;
     width: 100%;
     margin: 0px;
@@ -117,7 +141,7 @@
     bottom: 10px;
     width: 100%;
   }
-  .contacts__linksList{
+  .contacts__linksList {
     margin-bottom: 0;
     padding-right: 100%;
   }

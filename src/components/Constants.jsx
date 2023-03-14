@@ -19,11 +19,6 @@ export const aboutStyle = {
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
-  height: "100vh",
-  width: "100%",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
 };
 
 export const carouselShoes = {
@@ -59,7 +54,7 @@ export const pricesStyle = {
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
-  height: "100vh",
+  height: "100%",
   width: "100%",
   display: "flex",
   justifyContent: "center",
@@ -74,7 +69,7 @@ export const contactsStyle = {
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
-  overflow:"hidden",
+  overflow: "hidden",
   margin: "0",
 };
 export const leftCaret = (
@@ -200,5 +195,32 @@ export const russian = (
     <rect fill="#fff" width="9" height="3" />
     <rect fill="#d52b1e" y="4" width="9" height="3" />
     <rect fill="#0039a6" y="2" width="9" height="3" />
+  </svg>
+);
+
+export const arrow = (
+  <svg
+    style={{ transform: "matrix(-1, 0, 0, 1, 25, 0)" }}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+  >
+    <g>
+      <path
+        d="M9.865 82.005c8.634-1.047 17.137-3.036 25.005-6.398 7.857-3.348 15.062-8.085 20.822-14.208 5.801-6.08 10.233-13.346 13.408-21.139 3.188-7.801 5.173-16.106 6.388-24.536l.006-.039a4.504 4.504 0 1 1 8.87 1.533c-1.802 8.928-4.435 17.771-8.395 26.093-3.941 8.309-9.29 16.068-16.047 22.387-6.714 6.372-14.852 11.06-23.383 14.138-8.552 3.096-17.498 4.642-26.404 5.219a1.531 1.531 0 0 1-.288-3.047l.018-.003z"
+        fill="#0039a6"
+      />
+    </g>
+    <g>
+      <path
+        d="M84.505 14.243l7.776 14.97a1.635 1.635 0 0 1-2.561 1.952L77.347 19.698a4.568 4.568 0 1 1 7.158-5.455z"
+        fill="#0039a6"
+      />
+    </g>
+    <g>
+      <path
+        d="M81.742 19.823L66.183 26.34a1.635 1.635 0 0 1-1.735-2.713L76.895 12.24a4.567 4.567 0 1 1 4.847 7.583z"
+        fill="#0039a6"
+      />
+    </g>
   </svg>
 );

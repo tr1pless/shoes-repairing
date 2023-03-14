@@ -7,9 +7,9 @@ import {
   serviceContacts,
   mapArrow,
   mapClose,
+  arrow,
 } from "../Constants";
 import styles from "./contacts.module.css";
-
 
 export const Contacts = () => {
   const [active, setActive] = useState(false);
@@ -36,7 +36,7 @@ export const Contacts = () => {
             ></iframe>
           </div>
           <button
-            style={{ display: `${active ? "none" : "block"}` }}
+            style={{ zIndex: "2", display: `${active ? "none" : "block"}` }}
             className={styles.contacts__mapButtonOpen}
             onClick={() => {
               setActive(!active);
@@ -45,7 +45,7 @@ export const Contacts = () => {
             {mapArrow}
           </button>
           <button
-            style={{ display: `${active ? "block" : "none"}` }}
+            style={{ zIndex: "2", display: `${active ? "block" : "none"}` }}
             className={styles.contacts__mapButtonClose}
             onClick={() => {
               setActive(!active);
@@ -53,6 +53,13 @@ export const Contacts = () => {
           >
             {mapClose}
           </button>
+          <div
+            style={{ zIndex: "1", opacity: `${active ? "0" : "1"}` }}
+            className={styles.contacts__pointerWrp}
+          >
+            <p className={styles.contacts__mapPointerTxt}>Map</p>
+            <div className={styles.contacts__mapPointer}>{arrow}</div>
+          </div>
         </div>
         <div className={styles.contacts__list}>
           <ul className={styles.contacts__linksList}>
@@ -94,6 +101,11 @@ export const Contacts = () => {
                 <span style={whatsappImage} />
                 {serviceContacts[0].phone}
               </a>
+            </li>
+            <li className={styles.contacts__listItem}>
+              <p className={styles.contacts__address}>
+                Rīvas iela 4, Vidzemes priekšpilsēta, Rīga, LV-1064
+              </p>
             </li>
           </ul>
         </div>
