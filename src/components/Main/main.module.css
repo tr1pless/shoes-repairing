@@ -36,8 +36,15 @@
   line-height: 46px;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .carousel__text {
-  margin: 150px 100px 50px;
+    margin: 150px 100px 50px;
+  }
 }
+
+@media screen and (max-width: 500px) {
+  .carousel__text {
+    font-size: 17px;
+    margin: 88px 58px 50px;
+  }
 }

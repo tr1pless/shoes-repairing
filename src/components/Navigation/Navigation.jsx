@@ -3,16 +3,23 @@ import { Main } from "../Main/Main";
 import { About } from "../About/About";
 import { Pricelist } from "../Pricelist/Pricelist";
 import { Contacts } from "../Conctacts/Conctacts";
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { addScaleCorrector, motion } from "framer-motion";
 import { lat, rus } from "../language/navigation.json";
 import { useSelector, useDispatch } from "react-redux";
 import { language } from "../store/counterSlice";
-import { latvian, russian } from "../Constants";
+import {
+  latvian,
+  russian,
+  home,
+  contacts,
+  pricelist,
+  about,
+} from "../Constants";
+import { useState } from "react";
 
 const PageLayout = ({ children }) => children;
-
 const pageVariants = {
   initial: {
     opacity: 0.9,
@@ -50,7 +57,43 @@ const AnimationLayout = () => {
 
 export const Navigation = () => {
   const lang = useSelector((state) => state.counter.value);
+  const [mobile, setMobile] = useState(false);
+  const [mainValue, setMain] = useState("");
+  const [aboutValue, setAbout] = useState("");
+  const [pricelistValue, setPricelist] = useState("");
+  const [contactsValue, setContacts] = useState("");
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
+
   const dispatch = useDispatch();
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    if (width <= 500) {
+      setMobile(true);
+    } else if (height <= 500) {
+      console.log(height);
+      setMobile(true);
+    } else {
+      setMobile(false);
+      if (lang == 1) {
+        setMain(lat.main);
+        setAbout(lat.about);
+        setPricelist(lat.pricelist);
+        setContacts(lat.contacts);
+      } else {
+        setMain(rus.main);
+        setAbout(rus.about);
+        setPricelist(rus.pricelist);
+        setContacts(rus.contacts);
+      }
+    }
+  }, [width, lang]);
+
   return (
     <>
       <nav className={styles.navigation}>
@@ -65,41 +108,41 @@ export const Navigation = () => {
           <li className={styles.list__item}>
             <NavLink
               className={({ isActive }) =>
-                isActive ? `${styles.active__link}` : `${styles.list__link}`
+                isActive ? `${styles.active__link} ` : `${styles.list__link} `
               }
               to="/"
             >
-              {lang == 1 ? lat.main : rus.main}
+              {!mobile ? mainValue : home}
             </NavLink>
           </li>
           <li className={styles.list__item}>
             <NavLink
               className={({ isActive }) =>
-                isActive ? `${styles.active__link}` : `${styles.list__link}`
+                isActive ? `${styles.active__link} ` : `${styles.list__link} `
               }
               to="/About"
             >
-              {lang == 1 ? lat.about : rus.about}
+              {!mobile ? aboutValue : about}
             </NavLink>
           </li>
           <li className={styles.list__item}>
             <NavLink
               className={({ isActive }) =>
-                isActive ? `${styles.active__link}` : `${styles.list__link}`
+                isActive ? `${styles.active__link}  ` : `${styles.list__link} `
               }
               to="/Pricelist"
             >
-              {lang == 1 ? lat.pricelist : rus.pricelist}
+              {!mobile ? pricelistValue : pricelist}
             </NavLink>
           </li>
           <li className={styles.list__item}>
             <NavLink
               className={({ isActive }) =>
-                isActive ? `${styles.active__link}` : `${styles.list__link}`
+                isActive ? `${styles.active__link} ` : `${styles.list__link} `
               }
               to="/Contacts"
             >
-              {lang == 1 ? lat.contacts : rus.contacts}
+              {!mobile ? contactsValue : contacts}
             </NavLink>
           </li>
         </ul>

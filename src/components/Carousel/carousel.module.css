@@ -1,6 +1,3 @@
-.boxWraper {
-  position: relative;
-}
 .box {
   white-space: nowrap;
   transition: transform 0.7s;
@@ -10,7 +7,7 @@
   transition: 1s;
   overflow: hidden;
   width: 70%;
-
+  position: relative;
   background: rgba(11, 5, 5, 0.69);
   border: 4px solid rgb(18 17 17 / 53%);
   border-radius: 30px;
@@ -35,14 +32,25 @@
   fill: #dff4f0;
   background: none;
   border: none;
-  top: 40%;
+  top: 46%;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .carousel {
     min-height: 60%;
   }
-  .boxWraper{
+  .boxWraper {
     min-height: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .carousel {
+    width: 95%;
+    min-height: 50%;
+  }
+  .carets {
+    position: absolute;
+    top: 46%;
   }
 }

@@ -118,6 +118,7 @@
 
 @media screen and (max-width: 767px) {
   .contacts {
+    height: 100%;
     min-height: 100vh;
     width: 100%;
     margin: 0px;
@@ -127,7 +128,7 @@
   }
   .contacts__mapWrp {
     padding-top: 100px;
-    width: 90%;
+    width: 110%;
     max-width: 700px;
   }
   .contacts__apiMap {
@@ -140,6 +141,35 @@
     right: -5px;
     bottom: 10px;
     width: 100%;
+  }
+  .contacts__linksList {
+    margin-bottom: 0;
+    padding-right: 100%;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .contacts {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .contacts__mapWrp {
+    padding-top: 100px;
+    width: 110%;
+    max-width: 700px;
+  }
+  .contacts__apiMap {
+    width: 100%;
+    max-width: 700px;
+  }
+  .contacts__list {
+    width: 100%;
+    margin: 50px 0 50px 50px;
   }
   .contacts__linksList {
     margin-bottom: 0;

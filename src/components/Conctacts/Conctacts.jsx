@@ -36,7 +36,7 @@ export const Contacts = () => {
             ></iframe>
           </div>
           <button
-            style={{ zIndex: "2", display: `${active ? "none" : "block"}` }}
+            style={{ zIndex: "10", display: `${active ? "none" : "block"}` }}
             className={styles.contacts__mapButtonOpen}
             onClick={() => {
               setActive(!active);
@@ -45,7 +45,7 @@ export const Contacts = () => {
             {mapArrow}
           </button>
           <button
-            style={{ zIndex: "2", display: `${active ? "block" : "none"}` }}
+            style={{ zIndex: "10", display: `${active ? "block" : "none"}` }}
             className={styles.contacts__mapButtonClose}
             onClick={() => {
               setActive(!active);
