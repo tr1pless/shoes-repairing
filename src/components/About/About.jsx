@@ -57,8 +57,8 @@ export const About = () => {
               </li>
             </div>
             <div
-              style={{ margin: "0 0 5% 30px" }}
-              className={styles.features__wrp}
+              style={{ }}
+              className={`${styles.features__wrp} +${styles.features__thirdBox}`}
             >
               <li className={styles.features__titleWrp}>
                 <span className={styles.feature__icons}>
@@ -83,7 +83,8 @@ export const About = () => {
             </div>
           </ul>
         </div>
-        <div className={styles.aboutUs}>
+        <div
+         className={styles.aboutUs}>
           <p className={styles.aboutUs__title}>Что мы делаем</p>
           <p className={styles.aboutUs__text}>
             Так как наша мастерская специализируется в первую очередь на ремонте

@@ -16,7 +16,7 @@ export const Pricelist = () => {
             >
               <div>
                 <img src={`./../assets/shoe.png`} alt="" />
-                <ul className={styles.pl__itemList}>
+                <ul className={`${styles.pl__itemList} + ${styles.pl__itemListFirst}` }>
                   <li>Профилактика муж. : от 9€ </li>
                   <li>Профилактика жен. : от 8€</li>
                   <li>Замена молнии : от 12€</li>
