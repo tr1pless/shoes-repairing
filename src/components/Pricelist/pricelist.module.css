@@ -165,39 +165,42 @@ img {
     width: 97%;
   }
 }
-@media screen and (max-width: 1000px){
-  li{font-size: 18px;}
+@media screen and (max-width: 1000px) {
+  li {
+    font-size: 18px;
+  }
   .extraText {
     font-size: 26px;
   }
-  .extraButton{
+  .extraButton {
     font-size: 25px;
   }
 }
 @media screen and (max-width: 500px) {
-  .pl__listContainer{
+  .pl__listContainer {
     margin-top: 100px;
+    width: 100%;
   }
-  .pl__list{
+  .pl__list {
     flex-direction: column;
   }
   .pl__columnsContainer {
     display: flex;
     flex-direction: column;
   }
-  li{
+  li {
     font-size: 16px;
   }
-  .pl__itemListSecond{
+  .pl__itemListSecond {
     padding-top: 0;
   }
-  .pl__extraContainer{
-    width: 90%
+  .pl__extraContainer {
+    width: 100%;
   }
-  .extraButton{
+  .extraButton {
     font-size: 23px;
   }
-  .extraText{
+  .extraText {
     font-size: 23px;
   }
 }

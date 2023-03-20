@@ -77,7 +77,7 @@ a {
   }
 
   .navigation {
-    height: 8%;
+    height: min-content;
   }
 }
 

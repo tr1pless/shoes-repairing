@@ -97,14 +97,13 @@ export const Navigation = () => {
   return (
     <>
       <nav className={styles.navigation}>
-        <button
-          className={styles.navigation__lvru}
-          onClick={() => dispatch(language())}
-        >
-          {lang == 0 ? latvian : russian}
-        </button>
-
         <ul className={styles.list}>
+          <button
+            className={styles.navigation__lvru}
+            onClick={() => dispatch(language())}
+          >
+            {lang == 0 ? latvian : russian}
+          </button>
           <li className={styles.list__item}>
             <NavLink
               className={({ isActive }) =>
