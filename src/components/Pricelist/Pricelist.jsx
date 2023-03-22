@@ -14,8 +14,8 @@ export const Pricelist = () => {
   const sharpingLat = Object.entries(lat.sharping);
   const keysRus = Object.entries(rus.keys);
   const keysLat = Object.entries(lat.keys);
-  const contactsRus = Object.entries(rus.contacts);
-  const contactsLat = Object.entries(lat.contacts);
+  const contactsRus = rus.contacts.text;
+  const contactsLat = lat.contacts.text;
   const lang = useSelector((state) => state.counter.value);
   return (
     <>
@@ -38,16 +38,6 @@ export const Pricelist = () => {
                     : shoesSecondLat.map((value, key) => {
                         return <li key={key}>{value[1]}</li>;
                       })}
-                  {/* <li>Профилактика муж. : от 9€ </li> */}
-                  {/* <li>Профилактика жен. : от 8€</li> */}
-                  {/* <li>Замена молнии : от 12€</li> */}
-                  {/* <li>Набойки муж. : от 8€</li> */}
-                  {/* <li>Набойки жен. : от 8€</li> */}
-                  {/* <li>Замена супинатора: от 10€</li> */}
-                  {/* <li>Укрепление каблука : от 8€</li> */}
-                  {/* <li>Замена фикс. молнии : от 4€</li> */}
-                  {/* <li>Подклейка подошвы : от 2€</li> */}
-                  {/* <li>Переклейка подошвы : от 10€</li> */}
                 </ul>
               </div>
               <ul
@@ -60,16 +50,6 @@ export const Pricelist = () => {
                   : shoesFirstLat.map((value, key) => {
                       return <li key={key}>{value[1]}, </li>;
                     })}
-                {/* <li>Профилактика жен. : от 8€</li> */}
-                {/* <li>Прошивка швов : от 2€</li> */}
-                {/* <li>Ушивка голенищ : от 20€</li> */}
-                {/* <li>Замена фурнитуры : от 2€</li> */}
-                {/* <li>Замена вклеек : от 7€</li> */}
-                {/* <li>Растяжка : от 5€</li> */}
-                {/* <li>Чистка обуви : от 15€</li> */}
-                {/* <li>Прошив вокруг : от 4€</li> */}
-                {/* <li>Заплатки : от 7€</li> */}
-                {/* <li>Рубцы\носики. : от 5 €</li> */}
               </ul>
             </div>
             <div className={styles.pl__columnsContainer}>
@@ -87,11 +67,6 @@ export const Pricelist = () => {
                     : sharpingLat.map((value, key) => {
                         return <li key={key}>{value[1]}</li>;
                       })}
-                  {/* <li>Заточка кухонных ножей : от 2€</li> */}
-                  {/* <li>Другие ножи(охотничьи и т.п) : от 4€</li> */}
-                  {/* <li>Ножи для мясорубки(комплект) : 6€</li> */}
-                  {/* <li>Маникюрные инструменты : от 3€</li> */}
-                  {/* <li>Хозяйственные инструменты : от 4€</li> */}
                 </ul>
               </div>
               <div>
@@ -108,13 +83,6 @@ export const Pricelist = () => {
                     : keysLat.map((value, key) => {
                         return <li key={key}>{value[1]}</li>;
                       })}
-                  {/* <li>Ключ горизонтальной нарезки : от 4€</li> */}
-                  {/* <li>Ключ с вертикальной нарезкой : от 9€</li> */}
-                  {/* <li>Дисковый ключ(ABLOY) : от 5€</li> */}
-                  {/* <li>Сувальдный ключ(паук) : от 9€</li> */}
-                  {/* <li>Крестообразный ключ: от 6€</li> */}
-                  {/* <li>Чипы для домофонов: 5€</li> */}
-                  {/* <li>Пульт для гаражной двери: 15€</li> */}
                 </ul>
               </div>
             </div>
