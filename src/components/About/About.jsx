@@ -30,12 +30,12 @@ export const About = () => {
                   </svg>
                 </span>
                 <p className={styles.features__title}>
-                  {lang ? data.rus[1].title : data.lat[1].title}
+                  {!lang ? data.rus[1].title : data.lat[1].title}
                 </p>
               </li>
 
               <li className={styles.features__text}>
-                {lang ? data.rus[1].text : data.lat[1].text}
+                {!lang ? data.rus[1].text : data.lat[1].text}
               </li>
             </div>
             <div className={styles.features__wrp}>
@@ -54,12 +54,12 @@ export const About = () => {
                   </svg>
                 </span>
                 <p className={styles.features__title}>
-                  {lang ? data.rus[2].title : data.lat[2].title}
+                  {!lang ? data.rus[2].title : data.lat[2].title}
                 </p>
               </li>
 
               <li className={styles.features__text}>
-                {lang ? data.rus[2].text : data.lat[2].text}
+                {!lang ? data.rus[2].text : data.lat[2].text}
               </li>
             </div>
             <div
@@ -81,21 +81,21 @@ export const About = () => {
                   </svg>
                 </span>
                 <p className={styles.features__title}>
-                  {lang ? data.rus[3].title : data.lat[3].title}
+                  {!lang ? data.rus[3].title : data.lat[3].title}
                 </p>
               </li>
               <li className={styles.features__text}>
-                {lang ? data.rus[3].text : data.lat[3].text}
+                {!lang ? data.rus[3].text : data.lat[3].text}
               </li>
             </div>
           </ul>
         </div>
         <div className={styles.aboutUs}>
           <p className={styles.aboutUs__title}>
-            {lang ? data.rus[4].title : data.lat[4].title}
+            {!lang ? data.rus[4].title : data.lat[4].title}
           </p>
           <p className={styles.aboutUs__text}>
-            {lang ? data.rus[4].text : data.lat[4].text}
+            {!lang ? data.rus[4].text : data.lat[4].text}
           </p>
         </div>
       </section>
