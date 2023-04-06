@@ -31,7 +31,7 @@ export const Pricelist = () => {
                 <ul
                   className={`${styles.pl__itemList} + ${styles.pl__itemListFirst}`}
                 >
-                  {lang === 0
+                  {+lang === 0
                     ? shoesSecondRus.map((value, key) => {
                         return <li key={key}>{value[1]}</li>
                       })
@@ -43,7 +43,7 @@ export const Pricelist = () => {
               <ul
                 className={`${styles.pl__itemList} + ${styles.pl__itemListSecond}`}
               >
-                {lang === 0
+                {+lang === 0
                   ? shoesFirstRus.map((value, key) => {
                       return <li key={key}>{value[1]}</li>
                     })
@@ -60,7 +60,7 @@ export const Pricelist = () => {
                   alt=''
                 />
                 <ul className={styles.pl__itemList}>
-                  {lang === 0
+                  {+lang === 0
                     ? sharpingRus.map((value, key) => {
                         return <li key={key}>{value[1]}</li>
                       })
@@ -76,7 +76,7 @@ export const Pricelist = () => {
                   alt=''
                 />
                 <ul className={styles.pl__itemList}>
-                  {lang === 0
+                  {+lang === 0
                     ? keysRus.map((value, key) => {
                         return <li key={key}>{value[1]}</li>
                       })
@@ -90,12 +90,12 @@ export const Pricelist = () => {
         </div>
         <div className={styles.pl__extraContainer}>
           <p className={styles.extraText}>
-            {lang === 0 ? contactsRus : contactsLat}
+            {+lang === 0 ? contactsRus : contactsLat}
           </p>
           <div className={styles.extraLink__container}>
             <Link className={styles.list__link} to='/Contacts'>
               <button className={styles.extraButton} type='button'>
-                <span>{lang === 0 ? 'Контакты' : 'KONTAKTI'}</span>
+                <span>{+lang === 0 ? 'Контакты' : 'KONTAKTI'}</span>
               </button>
             </Link>
           </div>

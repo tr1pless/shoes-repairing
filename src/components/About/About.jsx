@@ -5,7 +5,7 @@ import data from './../language/about.json'
 import { useSelector } from 'react-redux'
 
 export const About = () => {
-  const lang = useSelector((state) => state.value)
+  const lang = useSelector((state) => state.counter.value)
 
   return (
     <>

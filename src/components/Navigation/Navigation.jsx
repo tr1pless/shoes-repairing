@@ -80,7 +80,7 @@ export const Navigation = () => {
       setMobile(true)
     } else {
       setMobile(false)
-      if (lang === 1) {
+      if (+lang === 1) {
         setMain(data.lat.main)
         setAbout(data.lat.about)
         setPricelist(data.lat.pricelist)
@@ -102,7 +102,7 @@ export const Navigation = () => {
             className={styles.navigation__lvru}
             onClick={() => dispatch(language())}
           >
-            {lang === 0 ? latvian : russian}
+            {+lang === 0 ? latvian : russian}
           </button>
           <li className={styles.list__item}>
             <NavLink
