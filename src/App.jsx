@@ -1,12 +1,12 @@
-import React from "react";
-import { Navigation } from "./components/Navigation/Navigation";
+import React from 'react'
+import { Navigation } from './components/Navigation/Navigation'
 
 function App() {
   return (
     <>
       <Navigation />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

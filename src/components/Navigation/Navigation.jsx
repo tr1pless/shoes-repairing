@@ -1,14 +1,14 @@
-import styles from "./navigation.module.css";
-import { Main } from "../Main/Main";
-import { About } from "../About/About";
-import { Pricelist } from "../Pricelist/Pricelist";
-import { Contacts } from "../Conctacts/Conctacts";
-import React, { useEffect } from "react";
-import { NavLink, Outlet, Route, Routes, useLocation } from "react-router-dom";
-import { addScaleCorrector, motion } from "framer-motion";
-import { lat, rus } from "../language/navigation.json";
-import { useSelector, useDispatch } from "react-redux";
-import { language } from "../store/counterSlice";
+import styles from './navigation.module.css'
+import { Main } from '../Main/Main'
+import { About } from '../About/About'
+import { Pricelist } from '../Pricelist/Pricelist'
+import { Contacts } from '../Conctacts/Conctacts'
+import React, { useEffect } from 'react'
+import { NavLink, Outlet, Route, Routes, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import data from '../language/navigation.json'
+import { useSelector, useDispatch } from 'react-redux'
+import { language } from '../store/counterSlice'
 import {
   latvian,
   russian,
@@ -16,10 +16,10 @@ import {
   contacts,
   pricelist,
   about,
-} from "../Constants";
-import { useState } from "react";
+} from '../Constants'
+import { useState } from 'react'
 
-const PageLayout = ({ children }) => children;
+const PageLayout = ({ children }) => children
 const pageVariants = {
   initial: {
     opacity: 0.9,
@@ -30,69 +30,69 @@ const pageVariants = {
   out: {
     opacity: 0.7,
   },
-};
+}
 
 const pageTransition = {
   delay: 0.2,
-  type: "spring",
+  type: 'spring',
   duration: 2,
-};
+}
 
 const AnimationLayout = () => {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
   return (
     <PageLayout>
       <motion.div
         key={pathname}
-        initial="initial"
-        animate="in"
+        initial='initial'
+        animate='in'
         variants={pageVariants}
         transition={pageTransition}
       >
         <Outlet />
       </motion.div>
     </PageLayout>
-  );
-};
+  )
+}
 
 export const Navigation = () => {
-  const lang = useSelector((state) => state.counter.value);
-  const [mobile, setMobile] = useState(false);
-  const [mainValue, setMain] = useState("");
-  const [aboutValue, setAbout] = useState("");
-  const [pricelistValue, setPricelist] = useState("");
-  const [contactsValue, setContacts] = useState("");
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
+  const lang = useSelector((state) => state.counter.value)
+  const [mobile, setMobile] = useState(false)
+  const [mainValue, setMain] = useState('')
+  const [aboutValue, setAbout] = useState('')
+  const [pricelistValue, setPricelist] = useState('')
+  const [contactsValue, setContacts] = useState('')
+  const [width, setWidth] = useState(window.innerWidth)
+  const [height, setHeight] = useState(window.innerHeight)
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   useEffect(() => {
     const handleResize = () => {
-      setWidth(window.innerWidth);
-      setHeight(window.innerHeight);
-    };
-    window.addEventListener("resize", handleResize);
-    handleResize();
+      setWidth(window.innerWidth)
+      setHeight(window.innerHeight)
+    }
+    window.addEventListener('resize', handleResize)
+    handleResize()
     if (width <= 500) {
-      setMobile(true);
+      setMobile(true)
     } else if (height <= 500) {
-      console.log(height);
-      setMobile(true);
+      console.log(height)
+      setMobile(true)
     } else {
-      setMobile(false);
-      if (lang == 1) {
-        setMain(lat.main);
-        setAbout(lat.about);
-        setPricelist(lat.pricelist);
-        setContacts(lat.contacts);
+      setMobile(false)
+      if (lang === 1) {
+        setMain(data.lat.main)
+        setAbout(data.lat.about)
+        setPricelist(data.lat.pricelist)
+        setContacts(data.lat.contacts)
       } else {
-        setMain(rus.main);
-        setAbout(rus.about);
-        setPricelist(rus.pricelist);
-        setContacts(rus.contacts);
+        setMain(data.rus.main)
+        setAbout(data.rus.about)
+        setPricelist(data.rus.pricelist)
+        setContacts(data.rus.contacts)
       }
     }
-  }, [width, lang]);
+  }, [lang])
 
   return (
     <>
@@ -102,14 +102,14 @@ export const Navigation = () => {
             className={styles.navigation__lvru}
             onClick={() => dispatch(language())}
           >
-            {lang == 0 ? latvian : russian}
+            {lang === 0 ? latvian : russian}
           </button>
           <li className={styles.list__item}>
             <NavLink
               className={({ isActive }) =>
                 isActive ? `${styles.active__link} ` : `${styles.list__link} `
               }
-              to="/"
+              to='/'
             >
               {!mobile ? mainValue : home}
             </NavLink>
@@ -119,7 +119,7 @@ export const Navigation = () => {
               className={({ isActive }) =>
                 isActive ? `${styles.active__link} ` : `${styles.list__link} `
               }
-              to="/About"
+              to='/About'
             >
               {!mobile ? aboutValue : about}
             </NavLink>
@@ -129,7 +129,7 @@ export const Navigation = () => {
               className={({ isActive }) =>
                 isActive ? `${styles.active__link}  ` : `${styles.list__link} `
               }
-              to="/Pricelist"
+              to='/Pricelist'
             >
               {!mobile ? pricelistValue : pricelist}
             </NavLink>
@@ -139,7 +139,7 @@ export const Navigation = () => {
               className={({ isActive }) =>
                 isActive ? `${styles.active__link} ` : `${styles.list__link} `
               }
-              to="/Contacts"
+              to='/Contacts'
             >
               {!mobile ? contactsValue : contacts}
             </NavLink>
@@ -148,12 +148,12 @@ export const Navigation = () => {
       </nav>
       <Routes>
         <Route element={<AnimationLayout />}>
-          <Route path="/" element={<Main />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Pricelist" element={<Pricelist />} />
-          <Route path="/Contacts" element={<Contacts />} />
+          <Route path='/' element={<Main />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Pricelist' element={<Pricelist />} />
+          <Route path='/Contacts' element={<Contacts />} />
         </Route>
       </Routes>
     </>
-  );
-};
+  )
+}

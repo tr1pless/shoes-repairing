@@ -2,20 +2,20 @@ import React from 'react'
 import styles from './pricelist.module.css'
 import { pricesStyle } from '../Constants'
 import { Link } from 'react-router-dom'
-import { lat, rus } from '../language/pricelist.json'
+import data from '../language/pricelist.json'
 import { useSelector } from 'react-redux'
 
 export const Pricelist = () => {
-  const shoesFirstRus = Object.entries(rus.shoes.firstRow)
-  const shoesFirstLat = Object.entries(lat.shoes.firstRow)
-  const shoesSecondRus = Object.entries(rus.shoes.secondRow)
-  const shoesSecondLat = Object.entries(lat.shoes.secondRow)
-  const sharpingRus = Object.entries(rus.sharping)
-  const sharpingLat = Object.entries(lat.sharping)
-  const keysRus = Object.entries(rus.keys)
-  const keysLat = Object.entries(lat.keys)
-  const contactsRus = rus.contacts.text
-  const contactsLat = lat.contacts.text
+  const shoesFirstRus = Object.entries(data.rus.shoes.firstRow)
+  const shoesFirstLat = Object.entries(data.lat.shoes.firstRow)
+  const shoesSecondRus = Object.entries(data.rus.shoes.secondRow)
+  const shoesSecondLat = Object.entries(data.lat.shoes.secondRow)
+  const sharpingRus = Object.entries(data.rus.sharping)
+  const sharpingLat = Object.entries(data.lat.sharping)
+  const keysRus = Object.entries(data.rus.keys)
+  const keysLat = Object.entries(data.lat.keys)
+  const contactsRus = data.rus.contacts.text
+  const contactsLat = data.lat.contacts.text
   const lang = useSelector((state) => state.counter.value)
   return (
     <>
@@ -31,7 +31,7 @@ export const Pricelist = () => {
                 <ul
                   className={`${styles.pl__itemList} + ${styles.pl__itemListFirst}`}
                 >
-                  {lang == 0
+                  {lang === 0
                     ? shoesSecondRus.map((value, key) => {
                         return <li key={key}>{value[1]}</li>
                       })
@@ -43,7 +43,7 @@ export const Pricelist = () => {
               <ul
                 className={`${styles.pl__itemList} + ${styles.pl__itemListSecond}`}
               >
-                {lang == 0
+                {lang === 0
                   ? shoesFirstRus.map((value, key) => {
                       return <li key={key}>{value[1]}</li>
                     })
@@ -60,7 +60,7 @@ export const Pricelist = () => {
                   alt=''
                 />
                 <ul className={styles.pl__itemList}>
-                  {lang == 0
+                  {lang === 0
                     ? sharpingRus.map((value, key) => {
                         return <li key={key}>{value[1]}</li>
                       })
@@ -76,7 +76,7 @@ export const Pricelist = () => {
                   alt=''
                 />
                 <ul className={styles.pl__itemList}>
-                  {lang == 0
+                  {lang === 0
                     ? keysRus.map((value, key) => {
                         return <li key={key}>{value[1]}</li>
                       })
@@ -90,12 +90,12 @@ export const Pricelist = () => {
         </div>
         <div className={styles.pl__extraContainer}>
           <p className={styles.extraText}>
-            {lang == 0 ? contactsRus : contactsLat}
+            {lang === 0 ? contactsRus : contactsLat}
           </p>
           <div className={styles.extraLink__container}>
             <Link className={styles.list__link} to='/Contacts'>
               <button className={styles.extraButton} type='button'>
-                <span>{lang == 0 ? 'Контакты' : 'KONTAKTI'}</span>
+                <span>{lang === 0 ? 'Контакты' : 'KONTAKTI'}</span>
               </button>
             </Link>
           </div>

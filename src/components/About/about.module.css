@@ -1,5 +1,6 @@
 .about__container {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -39,7 +40,7 @@
 }
 
 .features__title {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 800;
   font-size: 28px;
@@ -48,7 +49,7 @@
 }
 .features__text {
   text-align: left;
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 600;
   font-size: 23px;
@@ -67,7 +68,7 @@
 
 .aboutUs__title {
   margin: 50px auto 30px;
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 900;
   font-size: 32px;
@@ -78,7 +79,7 @@
 }
 
 .aboutUs__text {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
@@ -124,7 +125,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   .about__container {
     height: 100%;
     width: 100%;

@@ -1,21 +1,20 @@
 {
-    "rus": {
-        "text":{
-            "1": "Добро пожаловать! Обращаясь к нам вы встретите квалифицированных мастеров с многолетним опытом, способных решить любую проблему, которая относится к сфере наших услуг.",
-            "2": "Сапожные работы любой сложности, от набоек и профилактики, до ушивки и реставрации.",
-            "3": "У нас вы можете сделать практически любую копию ключа для дверного замка, так же мы делаем копии чипов, ключ-карт и пультов для гаражных дверей.",
-            "4": "Заточка бытовых, хозяйственных и маникюрных инструментов таких как ножи, ножницы, топоры, лезвия для мясорубок и т.д, так же беремся за заточку коньков.",
-            "5": "Так же мы производим замену батареек для часов и укорачиваем браслеты для часов, занимаемся различеым ремонтом сумок."
-        }
-    },
-    "lat": {
-        "text":{
-            "1": "Laipni lūdzam! Vēršoties pie mums, jūs satiksiet kvalificētus amatniekus ar daudzu gadu pieredzi, kas spēj atrisināt jebkuru problēmu, kas saistīta ar mūsu pakalpojumu apjomu.",
-            "2": "Jebkuras sarežģītības apavu labošanas darbi (papēži, profilakse, apavu restaurācija, zābaku  iešūšana...)",
-            "3": "Pie mums jūs varat izgatavot gandrīz jebkuru durvju slēdzenes atslēgas , durvju mikroshēmas, atslēgu kartes un garāžu durvju tālvadības pults kopiju.",
-            "4": "Mēs veicam nažu, šķēru, cirvju, gaļas mašīnu asmeņu, manikīra instrumentu, kā arī slidu asmeņu asināšanu. ",
-            "5": "Mēs maiņām pulksteņa baterijas, saīsinām pulksteņa aproces, remontējam somas."
-        }
+  "rus": {
+    "text": {
+      "1": "Добро пожаловать! Обращаясь к нам вы встретите квалифицированных мастеров с многолетним опытом, способных решить любую проблему, которая относится к сфере наших услуг.",
+      "2": "Сапожные работы любой сложности, от набоек и профилактики, до ушивки и реставрации.",
+      "3": "У нас вы можете сделать практически любую копию ключа для дверного замка, так же мы делаем копии чипов, ключ-карт и пультов для гаражных дверей.",
+      "4": "Заточка бытовых, хозяйственных и маникюрных инструментов таких как ножи, ножницы, топоры, лезвия для мясорубок и т.д, так же беремся за заточку коньков.",
+      "5": "Так же мы производим замену батареек для часов и укорачиваем браслеты для часов, занимаемся различеым ремонтом сумок."
     }
-
+  },
+  "lat": {
+    "text": {
+      "1": "Laipni lūdzam! Vēršoties pie mums, jūs satiksiet kvalificētus amatniekus ar daudzu gadu pieredzi, kas spēj atrisināt jebkuru problēmu, kas saistīta ar mūsu pakalpojumu apjomu.",
+      "2": "Jebkuras sarežģītības apavu labošanas darbi (papēži, profilakse, apavu restaurācija, zābaku  iešūšana...)",
+      "3": "Pie mums jūs varat izgatavot gandrīz jebkuru durvju slēdzenes atslēgas , durvju mikroshēmas, atslēgu kartes un garāžu durvju tālvadības pults kopiju.",
+      "4": "Mēs veicam nažu, šķēru, cirvju, gaļas mašīnu asmeņu, manikīra instrumentu, kā arī slidu asmeņu asināšanu. ",
+      "5": "Mēs maiņām pulksteņa baterijas, saīsinām pulksteņa aproces, remontējam somas."
+    }
+  }
 }

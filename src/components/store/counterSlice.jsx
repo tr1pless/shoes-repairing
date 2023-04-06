@@ -1,17 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 export const counterSlice = createSlice({
-  name: "counter",
+  name: 'counter',
   initialState: {
     value: true,
   },
   reducers: {
     language: (state) => {
-      state.value = !state.value;
+      state.value = !state.value
     },
   },
-});
+})
 
-export const { language } = counterSlice.actions;
+export const { language } = counterSlice.actions
 
-export default counterSlice.reducer;
+export default counterSlice.reducer
