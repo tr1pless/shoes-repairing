@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import App from './App'
+// import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import store from './components/store/store'
 import { Provider } from 'react-redux'
 
 export const root = ReactDOM.createRoot(document.getElementById('root'))
+const App = React.lazy(() => import('./App'))
 
 root.render(
   <React.StrictMode>
