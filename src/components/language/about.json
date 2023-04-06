@@ -1,0 +1,38 @@
+{
+  "rus": {
+    "1": {
+      "title": "Быстро",
+      "text": "Всегда делаем все в кратчайшие сроки и укладываемся в обговоренный срок."
+    },
+    "2": {
+      "title": "Качественно",
+      "text": "Использозуем качественный материал и современное оборудование, а наши мастера имеют коллосальный опыт и навыки"
+    },
+    "3": {
+      "title": "Гарантия",
+      "text": "Даем гарантию на сделанную работу будь то обувь, ключи или заточка."
+    },
+    "4": {
+      "title": "Что мы делаем",
+      "text": "Так как наша мастерская специализируется в первую очередь на ремонте обуви, то мы беремся за ремонт обуви любой сложности. Так же изготавливаем копии ключей, чипы, некоторые виды пультов для гаражных дверей, занимаемся заточкой маникюрных, бытовых и хозяйственных инструментов, замена батареек и укорачивание браслетов на часах, ремонт сумок."
+    }
+  },
+  "lat": {
+    "1": {
+      "title": "Ātri",
+      "text": "Mēs vienmēr visu darām pēc iespējas īsākā laikā un ievērojam norunātos termiņus."
+    },
+    "2": {
+      "title": "Kvalitatīvi",
+      "text": "Mēs izmantojam augstas kvalitātes materiālus un modernu aprīkojumu, un mūsu meistariem ir liela pieredze un prasmes."
+    },
+    "3": {
+      "title": "Garantija",
+      "text": "Padarītajam darbam dodam garantiju, vai tie būtu apavi, atslēgas vai asināšana."
+    },
+    "4": {
+      "title": "Ko mēs darām",
+      "text": "Tā kā mūsu darbnīca galvenokārt specializējas apavu remontā, mēs uzņemamies jebkuras sarežģītības apavu remontu. Izgatavojam arī atslēgu, čipu, dažu veidu pulšu garāžas durvju kopijas, asinām manikīru, sadzīves un saimniecības instrumentus, nomainām baterijas un saīsinām pulksteņu aproces, remontējam somas."
+    }
+  }
+}
