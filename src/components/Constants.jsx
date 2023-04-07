@@ -75,6 +75,7 @@ export const contactsStyle = {
 }
 export const leftCaret = (
   <svg
+    fill='#b9afff'
     style={{ height: '40px' }}
     clipRule='evenodd'
     fillRule='evenodd'
@@ -92,6 +93,7 @@ export const leftCaret = (
 
 export const rightCaret = (
   <svg
+    fill='#b9afff'
     style={{ height: '40px' }}
     clipRule='evenodd'
     fillRule='evenodd'
