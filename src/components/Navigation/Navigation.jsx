@@ -66,6 +66,7 @@ export const Navigation = () => {
   const [height, setHeight] = useState(window.innerHeight)
 
   const dispatch = useDispatch()
+
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth)
@@ -76,7 +77,6 @@ export const Navigation = () => {
     if (width <= 500) {
       setMobile(true)
     } else if (height <= 500) {
-      console.log(height)
       setMobile(true)
     } else {
       setMobile(false)
@@ -92,7 +92,7 @@ export const Navigation = () => {
         setContacts(data.rus.contacts)
       }
     }
-  }, [lang])
+  }, [lang, width, height])
 
   return (
     <>
