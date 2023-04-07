@@ -14,15 +14,27 @@ import {
   about,
 } from '../Constants'
 import { Triangle } from 'react-loader-spinner'
-import { Main } from '../Main/Main'
-import { About } from '../About/About'
-import { Pricelist } from '../Pricelist/Pricelist'
-import { Contacts } from '../Contacts/Contacts'
 
-// const Main = lazy(() => import('../Main/Main'))
-// const About = lazy(() => import('../About/About'))
-// const Pricelist = lazy(() => import('../Pricelist/Pricelist'))
-// const Contacts = lazy(() => import('../Contacts/Contacts'))
+const Contacts = lazy(() =>
+  import('./../Contacts/Contacts').then((module) => ({
+    default: module.Contacts,
+  })),
+)
+const Main = lazy(() =>
+  import('./../Main/Main').then((module) => ({
+    default: module.Main,
+  })),
+)
+const About = lazy(() =>
+  import('./../About/About').then((module) => ({
+    default: module.About,
+  })),
+)
+const Pricelist = lazy(() =>
+  import('./../Pricelist/Pricelist').then((module) => ({
+    default: module.Pricelist,
+  })),
+)
 
 const PageLayout = ({ children }) => children
 const pageVariants = {
@@ -164,7 +176,8 @@ export const Navigation = () => {
                     width='80'
                     radius='9'
                     color='blue'
-                    ariaLabel='loading'
+                    ariaLabel='triangle-loading'
+                    visible={true}
                   />
                 }
               >
@@ -182,7 +195,8 @@ export const Navigation = () => {
                     width='80'
                     radius='9'
                     color='blue'
-                    ariaLabel='loading'
+                    ariaLabel='triangle-loading'
+                    visible={true}
                   />
                 }
               >
@@ -200,7 +214,8 @@ export const Navigation = () => {
                     width='80'
                     radius='9'
                     color='blue'
-                    ariaLabel='loading'
+                    ariaLabel='triangle-loading'
+                    visible={true}
                   />
                 }
               >
@@ -218,7 +233,8 @@ export const Navigation = () => {
                     width='80'
                     radius='9'
                     color='blue'
-                    ariaLabel='loading'
+                    ariaLabel='triangle-loading'
+                    visible={true}
                   />
                 }
               >
