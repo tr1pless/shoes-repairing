@@ -1,9 +1,5 @@
 import styles from './navigation.module.css'
-import { Main } from '../Main/Main'
-import { About } from '../About/About'
-import { Pricelist } from '../Pricelist/Pricelist'
-import { Contacts } from '../Conctacts/Conctacts'
-import React, { useEffect } from 'react'
+import React, { Suspense, useEffect, useState, lazy } from 'react'
 import { NavLink, Outlet, Route, Routes, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import data from '../language/navigation.json'
@@ -17,7 +13,16 @@ import {
   pricelist,
   about,
 } from '../Constants'
-import { useState } from 'react'
+import { Triangle } from 'react-loader-spinner'
+import { Main } from '../Main/Main'
+import { About } from '../About/About'
+import { Pricelist } from '../Pricelist/Pricelist'
+import { Contacts } from '../Contacts/Contacts'
+
+// const Main = lazy(() => import('../Main/Main'))
+// const About = lazy(() => import('../About/About'))
+// const Pricelist = lazy(() => import('../Pricelist/Pricelist'))
+// const Contacts = lazy(() => import('../Contacts/Contacts'))
 
 const PageLayout = ({ children }) => children
 const pageVariants = {
@@ -66,7 +71,6 @@ export const Navigation = () => {
   const [height, setHeight] = useState(window.innerHeight)
 
   const dispatch = useDispatch()
-
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth)
@@ -74,9 +78,11 @@ export const Navigation = () => {
     }
     window.addEventListener('resize', handleResize)
     handleResize()
+    console.log(width, height)
     if (width <= 500) {
       setMobile(true)
     } else if (height <= 500) {
+      console.log(height)
       setMobile(true)
     } else {
       setMobile(false)
@@ -92,7 +98,7 @@ export const Navigation = () => {
         setContacts(data.rus.contacts)
       }
     }
-  }, [lang, width, height])
+  }, [lang, height, width])
 
   return (
     <>
@@ -148,10 +154,78 @@ export const Navigation = () => {
       </nav>
       <Routes>
         <Route element={<AnimationLayout />}>
-          <Route path='/' element={<Main />} />
-          <Route path='/About' element={<About />} />
-          <Route path='/Pricelist' element={<Pricelist />} />
-          <Route path='/Contacts' element={<Contacts />} />
+          <Route
+            path='/'
+            element={
+              <Suspense
+                fallback={
+                  <Triangle
+                    height='80'
+                    width='80'
+                    radius='9'
+                    color='blue'
+                    ariaLabel='loading'
+                  />
+                }
+              >
+                <Main />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/About'
+            element={
+              <Suspense
+                fallback={
+                  <Triangle
+                    height='80'
+                    width='80'
+                    radius='9'
+                    color='blue'
+                    ariaLabel='loading'
+                  />
+                }
+              >
+                <About />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/Pricelist'
+            element={
+              <Suspense
+                fallback={
+                  <Triangle
+                    height='80'
+                    width='80'
+                    radius='9'
+                    color='blue'
+                    ariaLabel='loading'
+                  />
+                }
+              >
+                <Pricelist />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/Contacts'
+            element={
+              <Suspense
+                fallback={
+                  <Triangle
+                    height='80'
+                    width='80'
+                    radius='9'
+                    color='blue'
+                    ariaLabel='loading'
+                  />
+                }
+              >
+                <Contacts />
+              </Suspense>
+            }
+          />
         </Route>
       </Routes>
     </>
