@@ -166,82 +166,10 @@ export const Navigation = () => {
       </nav>
       <Routes>
         <Route element={<AnimationLayout />}>
-          <Route
-            path='/'
-            element={
-              <Suspense
-                fallback={
-                  <Triangle
-                    height='80'
-                    width='80'
-                    radius='9'
-                    color='blue'
-                    ariaLabel='triangle-loading'
-                    visible={true}
-                  />
-                }
-              >
-                <Main />
-              </Suspense>
-            }
-          />
-          <Route
-            path='/About'
-            element={
-              <Suspense
-                fallback={
-                  <Triangle
-                    height='80'
-                    width='80'
-                    radius='9'
-                    color='blue'
-                    ariaLabel='triangle-loading'
-                    visible={true}
-                  />
-                }
-              >
-                <About />
-              </Suspense>
-            }
-          />
-          <Route
-            path='/Pricelist'
-            element={
-              <Suspense
-                fallback={
-                  <Triangle
-                    height='80'
-                    width='80'
-                    radius='9'
-                    color='blue'
-                    ariaLabel='triangle-loading'
-                    visible={true}
-                  />
-                }
-              >
-                <Pricelist />
-              </Suspense>
-            }
-          />
-          <Route
-            path='/Contacts'
-            element={
-              <Suspense
-                fallback={
-                  <Triangle
-                    height='80'
-                    width='80'
-                    radius='9'
-                    color='blue'
-                    ariaLabel='triangle-loading'
-                    visible={true}
-                  />
-                }
-              >
-                <Contacts />
-              </Suspense>
-            }
-          />
+          <Route path='/' element={<Main />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Pricelist' element={<Pricelist />} />
+          <Route path='/Contacts' element={<Contacts />} />
         </Route>
       </Routes>
     </>
