@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Carousel, { CarouselItem } from '../Carousel/Carousel'
 import { mainStyle } from '../Constants'
 import data from '../language/main.json'
@@ -11,10 +11,8 @@ export const Main = () => {
   const rusText = Object.entries(data.rus.text)
   const latText = Object.entries(data.lat.text)
   const lang = useSelector((state) => state.counter.value)
-  const [firstRender, setFirstRender] = useState(true)
-  useEffect(() => {
-    setFirstRender(false)
-  }, [])
+
+  const [loading, setLoading] = useState(true)
 
   const russian = rusText.map((value, key) => {
     return (
@@ -26,32 +24,43 @@ export const Main = () => {
 
   const latvian = latText.map((value, key) => {
     return (
-      <CarouselItem key={key}>
-        <p className={styles.carousel__text}>{value[1]}</p>
-      </CarouselItem>
+      <>
+        <CarouselItem key={key}>
+          <p className={styles.carousel__text}>{value[1]}</p>
+        </CarouselItem>
+      </>
     )
   })
+  const handleLoad = () => {
+    setLoading(false)
+  }
 
   return (
     <>
-      {firstRender && (
-        <Triangle
-          height='80'
-          width='80'
-          radius='9'
-          color='blue'
-          ariaLabel='triangle-loading'
-          visible={true}
-        />
-      )}
-      {!firstRender && (
+      <img
+        style={loading ? { opacity: 0 } : { opacity: 1 }}
+        className={styles.backgroundImg}
+        src='./../assets/oldMain.jpg'
+        alt=''
+        onLoad={handleLoad}
+      />
+
+      {!loading ? (
         <section style={mainStyle}>
           <Carousel>{lang ? latvian : russian}</Carousel>
         </section>
+      ) : (
+        <section style={mainStyle}>
+          <Triangle
+            height='150'
+            width='150'
+            radius='15'
+            color='blue'
+            ariaLabel='triangle-loading'
+            visible={true}
+          />
+        </section>
       )}
-      {/* <section style={mainStyle}> */}
-      {/* <Carousel>{lang ? latvian : russian}</Carousel> */}
-      {/* </section> */}
     </>
   )
 }

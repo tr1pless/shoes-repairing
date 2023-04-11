@@ -1,8 +1,6 @@
 import React from 'react'
 
 export const mainStyle = {
-  //   backgroundImage: `url("/rez/images/wpMain.jpg")`,
-  backgroundImage: `url("./../assets/oldMain.jpg")`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
@@ -15,7 +13,6 @@ export const mainStyle = {
 }
 
 export const aboutStyle = {
-  //   backgroundImage: `url("/rez/images/wpMain.jpg")`,
   backgroundImage: `url("./../assets/aboutBg.jpg")`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
@@ -23,7 +20,6 @@ export const aboutStyle = {
 }
 
 export const carouselShoes = {
-  // backgroundImage: `url("./../assets/carouselShoes.jpg")`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
@@ -33,7 +29,6 @@ export const carouselShoes = {
 }
 
 export const carouselKeys = {
-  // backgroundImage: `url("./../assets/carouselKeys.jpg")`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
@@ -42,7 +37,6 @@ export const carouselKeys = {
 }
 
 export const carouselSharping = {
-  // backgroundImage: `url("./../assets/carouselSharping.jpg")`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
@@ -65,7 +59,6 @@ export const pricesStyle = {
 }
 
 export const contactsStyle = {
-  //   backgroundImage: `url("/rez/images/wpMain.jpg")`,
   backgroundImage: `url("./../assets/contactsBg.jpg")`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
