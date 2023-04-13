@@ -13,7 +13,6 @@ export const mainStyle = {
 }
 
 export const aboutStyle = {
-  backgroundImage: `url("./../assets/aboutBg.jpg")`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',

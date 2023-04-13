@@ -1,5 +1,5 @@
 import styles from './navigation.module.css'
-import React, { Suspense, useEffect, useState, lazy } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, Outlet, Route, Routes, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import data from '../language/navigation.json'
@@ -13,28 +13,10 @@ import {
   pricelist,
   about,
 } from '../Constants'
-import { Triangle } from 'react-loader-spinner'
-
-const Contacts = lazy(() =>
-  import('./../Contacts/Contacts').then((module) => ({
-    default: module.Contacts,
-  })),
-)
-const Main = lazy(() =>
-  import('./../Main/Main').then((module) => ({
-    default: module.Main,
-  })),
-)
-const About = lazy(() =>
-  import('./../About/About').then((module) => ({
-    default: module.About,
-  })),
-)
-const Pricelist = lazy(() =>
-  import('./../Pricelist/Pricelist').then((module) => ({
-    default: module.Pricelist,
-  })),
-)
+import { About } from '../About/About'
+import { Contacts } from '../Contacts/Contacts'
+import { Main } from '../Main/Main'
+import { Pricelist } from '../Pricelist/Pricelist'
 
 const PageLayout = ({ children }) => children
 const pageVariants = {
@@ -90,11 +72,9 @@ export const Navigation = () => {
     }
     window.addEventListener('resize', handleResize)
     handleResize()
-    console.log(width, height)
     if (width <= 500) {
       setMobile(true)
     } else if (height <= 500) {
-      console.log(height)
       setMobile(true)
     } else {
       setMobile(false)

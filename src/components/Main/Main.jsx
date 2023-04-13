@@ -50,12 +50,12 @@ export const Main = () => {
           <Carousel>{lang ? latvian : russian}</Carousel>
         </section>
       ) : (
-        <section style={mainStyle}>
+        <section className={styles.spinnerWrp} style={mainStyle}>
           <Triangle
-            height='150'
-            width='150'
-            radius='15'
-            color='blue'
+            height='300'
+            width='300'
+            radius='20'
+            color='#903f4f'
             ariaLabel='triangle-loading'
             visible={true}
           />
