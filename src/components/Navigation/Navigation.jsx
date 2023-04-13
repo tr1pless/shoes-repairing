@@ -47,6 +47,7 @@ const AnimationLayout = () => {
         animate='in'
         variants={pageVariants}
         transition={pageTransition}
+        style={{ position: 'relative' }}
       >
         <Outlet />
       </motion.div>

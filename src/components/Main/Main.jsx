@@ -3,7 +3,6 @@ import Carousel, { CarouselItem } from '../Carousel/Carousel'
 import { mainStyle } from '../Constants'
 import data from '../language/main.json'
 import { useSelector } from 'react-redux'
-
 import styles from './main.module.css'
 import { Triangle } from 'react-loader-spinner'
 

@@ -61,7 +61,7 @@
   font-weight: 800;
   font-size: 28px;
   line-height: 30px;
-  color: #fdfdfd;
+  color: #cccadc;
 }
 .features__text {
   text-align: left;
@@ -71,7 +71,7 @@
   font-size: 23px;
   line-height: 30px;
   margin: 30px 0;
-  color: #fdfdfd;
+  color: #cccadc;
 }
 
 .aboutUs {
@@ -90,8 +90,7 @@
   font-size: 32px;
   line-height: 46px;
   text-align: center;
-
-  color: #fdfdfd;
+  color: #cccadc;
 }
 
 .aboutUs__text {
@@ -102,7 +101,7 @@
   line-height: 40px;
   text-align: center;
   margin: 20px 40px;
-  color: #fdfdfd;
+  color: #cccadc;
 }
 @media screen and (min-width: 900px) {
   .about__container {
