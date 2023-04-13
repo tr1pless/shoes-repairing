@@ -96,7 +96,7 @@ export const Pricelist = () => {
                 </div>
                 <div>
                   <img
-                    style={{ marginTop: '5px' }}
+                    style={{ marginTop: '5px', marginBottom: '7px' }}
                     src='./assets/key.png'
                     alt=''
                   />
