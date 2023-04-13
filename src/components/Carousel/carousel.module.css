@@ -19,6 +19,7 @@
   color: white;
   height: 100%;
   white-space: pre-wrap;
+  width: 100%;
 }
 
 .carets:hover {
