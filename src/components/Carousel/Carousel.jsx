@@ -47,7 +47,7 @@ const Carousel = ({ children }) => {
       next()
     }, mlsec)
     return () => clearInterval(interval)
-  }, [activeIndex])
+  }, [activeIndex, mlsec, next])
 
   return (
     <div

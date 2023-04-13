@@ -1,7 +1,6 @@
 import styles from './navigation.module.css'
 import React, { useEffect, useState } from 'react'
-import { NavLink, Outlet, Route, Routes, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { NavLink, Route, Routes } from 'react-router-dom'
 import data from '../language/navigation.json'
 import { useSelector, useDispatch } from 'react-redux'
 import { language } from '../store/counterSlice'
@@ -17,43 +16,6 @@ import { About } from '../About/About'
 import { Contacts } from '../Contacts/Contacts'
 import { Main } from '../Main/Main'
 import { Pricelist } from '../Pricelist/Pricelist'
-
-const PageLayout = ({ children }) => children
-const pageVariants = {
-  initial: {
-    opacity: 0.9,
-  },
-  in: {
-    opacity: 1,
-  },
-  out: {
-    opacity: 0.7,
-  },
-}
-
-const pageTransition = {
-  delay: 0.2,
-  type: 'spring',
-  duration: 2,
-}
-
-const AnimationLayout = () => {
-  const { pathname } = useLocation()
-  return (
-    <PageLayout>
-      <motion.div
-        key={pathname}
-        initial='initial'
-        animate='in'
-        variants={pageVariants}
-        transition={pageTransition}
-        style={{ position: 'relative' }}
-      >
-        <Outlet />
-      </motion.div>
-    </PageLayout>
-  )
-}
 
 export const Navigation = () => {
   const lang = useSelector((state) => state.counter.value)
@@ -146,14 +108,12 @@ export const Navigation = () => {
         </ul>
       </nav>
       <Routes>
-        <Route element={<AnimationLayout />}>
-          <Route path='/' element={<Main />} />
-          <Route path='/main' element={<Main />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/pricelist' element={<Pricelist />} />
-          <Route path='/contacts' element={<Contacts />} />
-          <Route path='*' element={<Main />} />
-        </Route>
+        <Route path='/' element={<Main />} />
+        <Route path='/main' element={<Main />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/pricelist' element={<Pricelist />} />
+        <Route path='/contacts' element={<Contacts />} />
+        <Route path='*' element={<Main />} />
       </Routes>
     </>
   )
