@@ -118,7 +118,7 @@ export const Navigation = () => {
               className={({ isActive }) =>
                 isActive ? `${styles.active__link} ` : `${styles.list__link} `
               }
-              to='/About'
+              to='/about'
             >
               {!mobile ? aboutValue : about}
             </NavLink>
@@ -128,7 +128,7 @@ export const Navigation = () => {
               className={({ isActive }) =>
                 isActive ? `${styles.active__link}  ` : `${styles.list__link} `
               }
-              to='/Pricelist'
+              to='/pricelist'
             >
               {!mobile ? pricelistValue : pricelist}
             </NavLink>
@@ -138,7 +138,7 @@ export const Navigation = () => {
               className={({ isActive }) =>
                 isActive ? `${styles.active__link} ` : `${styles.list__link} `
               }
-              to='/Contacts'
+              to='/contacts'
             >
               {!mobile ? contactsValue : contacts}
             </NavLink>
@@ -148,9 +148,10 @@ export const Navigation = () => {
       <Routes>
         <Route element={<AnimationLayout />}>
           <Route path='/' element={<Main />} />
-          <Route path='/About' element={<About />} />
-          <Route path='/Pricelist' element={<Pricelist />} />
-          <Route path='/Contacts' element={<Contacts />} />
+          <Route path='/main' element={<Main />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/pricelist' element={<Pricelist />} />
+          <Route path='/contacts' element={<Contacts />} />
           <Route path='*' element={<Main />} />
         </Route>
       </Routes>
