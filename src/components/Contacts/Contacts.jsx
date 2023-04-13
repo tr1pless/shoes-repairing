@@ -12,10 +12,12 @@ import {
   mainStyle,
 } from '../Constants'
 import styles from './contacts.module.css'
+import { useSelector } from 'react-redux'
 
 export const Contacts = () => {
   const [active, setActive] = useState(false)
   const [loading, setLoading] = useState(true)
+  const lang = useSelector((state) => state.counter.value)
   const handleLoad = () => {
     setLoading(false)
   }
@@ -82,7 +84,9 @@ export const Contacts = () => {
               style={{ zIndex: '1', opacity: `${active ? '0' : '1'}` }}
               className={styles.contacts__pointerWrp}
             >
-              <p className={styles.contacts__mapPointerTxt}>Map</p>
+              <p className={styles.contacts__mapPointerTxt}>
+                {!lang ? 'КАРТА' : 'KARTE'}
+              </p>
               <div className={styles.contacts__mapPointer}>{arrow}</div>
             </div>
           </div>
