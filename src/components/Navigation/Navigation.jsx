@@ -60,6 +60,7 @@ export const Navigation = () => {
       <nav className={styles.navigation}>
         <ul className={styles.list}>
           <button
+            name='language'
             className={styles.navigation__lvru}
             onClick={() => dispatch(language())}
           >
@@ -67,6 +68,7 @@ export const Navigation = () => {
           </button>
           <li className={styles.list__item}>
             <NavLink
+              name='main'
               className={({ isActive }) =>
                 isActive ? `${styles.active__link} ` : `${styles.list__link} `
               }
@@ -77,6 +79,7 @@ export const Navigation = () => {
           </li>
           <li className={styles.list__item}>
             <NavLink
+              name='about'
               className={({ isActive }) =>
                 isActive ? `${styles.active__link} ` : `${styles.list__link} `
               }
@@ -87,6 +90,7 @@ export const Navigation = () => {
           </li>
           <li className={styles.list__item}>
             <NavLink
+              name='pricelist'
               className={({ isActive }) =>
                 isActive ? `${styles.active__link}  ` : `${styles.list__link} `
               }
@@ -97,6 +101,7 @@ export const Navigation = () => {
           </li>
           <li className={styles.list__item}>
             <NavLink
+              name='contacts'
               className={({ isActive }) =>
                 isActive ? `${styles.active__link} ` : `${styles.list__link} `
               }

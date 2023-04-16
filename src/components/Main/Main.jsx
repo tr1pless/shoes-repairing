@@ -54,7 +54,7 @@ export const Main = () => {
             height='300'
             width='300'
             radius='20'
-            color='#903f4f'
+            color='#7ba4bd'
             ariaLabel='triangle-loading'
             visible={true}
           />
