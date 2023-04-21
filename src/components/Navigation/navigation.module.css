@@ -1,13 +1,14 @@
 .list__item,
 .list__link {
-  font-family: "Josefin Slab";
+  font-family: 'Josefin Slab';
   font-style: normal;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 28px;
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
+  transition: all 0.3s;
 }
 .navigation__lvru {
   opacity: 0.5;
@@ -27,10 +28,10 @@
 }
 
 .active__link {
-  font-family: "Josefin Slab";
+  font-family: 'Josefin Slab';
   font-style: normal;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 21px;
   line-height: 28px;
   text-align: center;
   color: #00dd77;
@@ -71,10 +72,10 @@ a {
 
 @media screen and (max-width: 767px) {
   .active__link {
-    font-size: 21px;
+    font-size: 20px;
   }
   .list__link {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .navigation {

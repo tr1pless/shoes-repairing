@@ -23,6 +23,7 @@ li {
   font-family: 'Oswald';
   font-weight: 500;
   color: #c0b1e2;
+  font-size: 18px;
 }
 
 .pl__columnsContainer {
@@ -44,7 +45,7 @@ img {
   font-family: 'Josefin Slab';
   font-style: normal;
   font-weight: 700;
-  font-size: 35px;
+  font-size: 32px;
   line-height: 35px;
   text-align: center;
 
@@ -188,7 +189,7 @@ img {
   li {
     line-height: 40px;
 
-    font-size: 23px;
+    font-size: 21px;
   }
   .pl__listContainer {
     width: 97%;

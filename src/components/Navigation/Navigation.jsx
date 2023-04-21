@@ -26,8 +26,8 @@ export const Navigation = () => {
   const [contactsValue, setContacts] = useState('')
   const [width, setWidth] = useState(window.innerWidth)
   const [height, setHeight] = useState(window.innerHeight)
-
   const dispatch = useDispatch()
+
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth)
@@ -35,25 +35,43 @@ export const Navigation = () => {
     }
     window.addEventListener('resize', handleResize)
     handleResize()
-    if (width <= 500) {
-      setMobile(true)
-    } else if (height <= 500) {
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (width <= 500 || height <= 500) {
       setMobile(true)
     } else {
       setMobile(false)
-      if (+lang === 1) {
-        setMain(data.lat.main)
-        setAbout(data.lat.about)
-        setPricelist(data.lat.pricelist)
-        setContacts(data.lat.contacts)
-      } else {
-        setMain(data.rus.main)
-        setAbout(data.rus.about)
-        setPricelist(data.rus.pricelist)
-        setContacts(data.rus.contacts)
-      }
     }
-  }, [lang, height, width])
+  }, [width, height])
+
+  useEffect(() => {
+    if (+lang === 1) {
+      setMain(data.lat.main)
+      setAbout(data.lat.about)
+      setPricelist(data.lat.pricelist)
+      setContacts(data.lat.contacts)
+    } else {
+      setMain(data.rus.main)
+      setAbout(data.rus.about)
+      setPricelist(data.rus.pricelist)
+      setContacts(data.rus.contacts)
+    }
+  }, [
+    lang,
+    data.lat.main,
+    data.lat.about,
+    data.lat.pricelist,
+    data.lat.contacts,
+    data.rus.main,
+    data.rus.about,
+    data.rus.pricelist,
+    data.rus.contacts,
+  ])
 
   return (
     <>
