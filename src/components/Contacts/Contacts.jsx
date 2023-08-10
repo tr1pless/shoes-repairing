@@ -110,7 +110,7 @@ export const Contacts = () => {
                 className={styles.contacts__listItem}
               >
                 <a
-                  href='tel:+37129730629'
+                  href='tel:+37129993961'
                   className={styles.contacts__listLink}
                   target='_blank'
                 >
@@ -123,7 +123,7 @@ export const Contacts = () => {
                 style={{ paddingBottom: '30px' }}
               >
                 <a
-                  href='https://wa.me/+37129730629'
+                  href='https://wa.me/+37129993961'
                   className={styles.contacts__listLink}
                   target='_blank'
                 >
