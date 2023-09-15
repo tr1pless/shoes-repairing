@@ -1,13 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './pricelist.module.css'
 import { mainStyle, pricesStyle } from '../Constants'
 import { Link } from 'react-router-dom'
 import data from '../language/pricelist.json'
 import { useSelector } from 'react-redux'
-import { Triangle } from 'react-loader-spinner'
+import { InfinitySpin } from 'react-loader-spinner'
+import { nanoid } from 'nanoid'
 
 export const Pricelist = () => {
   const [loading, setLoading] = useState(true)
+  const [activeNav, setActiveNav] = useState(0)
+
+  const navRus = data.rus.nav
+  const navLat = data.lat.nav
+
   const shoesFirstRus = Object.entries(data.rus.shoes.firstRow)
   const shoesFirstLat = Object.entries(data.lat.shoes.firstRow)
   const shoesSecondRus = Object.entries(data.rus.shoes.secondRow)
@@ -20,8 +26,15 @@ export const Pricelist = () => {
   const contactsLat = data.lat.contacts.text
   const lang = useSelector((state) => state.counter.value)
 
+  const id = nanoid(4)
+
   const handleLoad = () => {
     setLoading(false)
+  }
+
+  const navItemChoice = (e, id) => {
+    setActiveNav(+e.target.id)
+    console.log(id, e.target.id)
   }
   return (
     <>
@@ -34,17 +47,50 @@ export const Pricelist = () => {
       />
       {loading ? (
         <section className={styles.spinnerWrp} style={mainStyle}>
-          <Triangle
-            height='300'
-            width='300'
-            radius='20'
-            color='#7ba4bd'
-            ariaLabel='triangle-loading'
-            visible={true}
-          />
+          <InfinitySpin width='200' color='rgb(160 45 34)' />
         </section>
       ) : (
         <section className={styles.pricelist__container} style={pricesStyle}>
+          <div className={styles.pricesNav}>
+            {+lang === 0
+              ? navRus.map((item) => {
+                  return (
+                    <button
+                      className={
+                        activeNav === item.id
+                          ? `${styles.navItem} ${styles.activeNavItem}`
+                          : `${styles.navItem}`
+                      }
+                      id={item.id}
+                      onClick={(e) => {
+                        navItemChoice(e, item.id)
+                      }}
+                      key={item.id}
+                    >
+                      {item.name}
+                    </button>
+                  )
+                })
+              : navLat.map((item) => {
+                  return (
+                    <button
+                      className={
+                        activeNav === item.id
+                          ? `${styles.navItem} ${styles.activeNavItem}`
+                          : `${styles.navItem}`
+                      }
+                      id={item.id}
+                      onClick={(e) => {
+                        navItemChoice(e, item.id)
+                      }}
+                      key={item.id}
+                    >
+                      {item.name}
+                    </button>
+                  )
+                })}
+          </div>
+
           <div className={styles.pl__listContainer}>
             <p className={styles.pl__listTitle}>{lang ? 'Cenas' : 'Цены'}</p>
             <div className={styles.pl__list}>

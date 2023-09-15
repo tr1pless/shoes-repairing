@@ -11,9 +11,26 @@
 }
 .spinnerWrp {
   background-color: #fcfcfc;
-  background-image: linear-gradient(34deg, #010341 11%, #0c031d 100%);
+  background-image: linear-gradient(34deg, #111112 11%, #0c031d 100%);
 }
 
+.pricesNav {
+  width: 100%;
+  height: 40px;
+  background: gray;
+  margin-top: 105px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.navItem {
+  background: none;
+  border: none;
+  font-size: 25px;
+}
+.activeNavItem {
+  border: 1px solid black;
+  color: red;
+}
 .pricelist__container {
   min-height: 100vh;
   overflow: hidden;

@@ -3,7 +3,7 @@ import { aboutStyle, mainStyle } from '../Constants'
 import styles from './about.module.css'
 import data from './../language/about.json'
 import { useSelector } from 'react-redux'
-import { Triangle } from 'react-loader-spinner'
+import { InfinitySpin } from 'react-loader-spinner'
 
 export const About = () => {
   const [loading, setLoading] = useState(true)
@@ -23,14 +23,7 @@ export const About = () => {
       />
       {loading ? (
         <section className={styles.spinnerWrp} style={mainStyle}>
-          <Triangle
-            height='300'
-            width='300'
-            radius='20'
-            color='#7ba4bd'
-            ariaLabel='triangle-loading'
-            visible={true}
-          />
+          <InfinitySpin width='200' color='rgb(160 45 34)' />
         </section>
       ) : (
         <section className={styles.about__container} style={aboutStyle}>
