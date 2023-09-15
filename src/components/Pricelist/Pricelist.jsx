@@ -10,18 +10,51 @@ import { nanoid } from 'nanoid'
 export const Pricelist = () => {
   const [loading, setLoading] = useState(true)
   const [activeNav, setActiveNav] = useState(0)
+  const [category, setCategory] = useState(0)
+
+  const categoryList = [
+    {
+      'nameLat': 'shoesLat',
+      'nameRus': 'shoesRus',
+      'id': 0,
+    },
+    {
+      'nameRus': 'shoesRus',
+      'nameLat': 'shoesLat',
+
+      'id': 1,
+    },
+    {
+      'nameRus': 'sharpingRus',
+      'nameLat': 'sharpingLat',
+
+      'id': 2,
+    },
+    {
+      'nameRus': 'keysRus',
+      'nameLat': 'keysLat',
+
+      'id': 3,
+    },
+    {
+      'nameRus': 'otherRus',
+      'nameLat': 'otherLat',
+
+      'id': 4,
+    },
+  ]
 
   const navRus = data.rus.nav
   const navLat = data.lat.nav
 
-  const shoesFirstRus = Object.entries(data.rus.shoes.firstRow)
-  const shoesFirstLat = Object.entries(data.lat.shoes.firstRow)
-  const shoesSecondRus = Object.entries(data.rus.shoes.secondRow)
-  const shoesSecondLat = Object.entries(data.lat.shoes.secondRow)
+  const shoesRus = Object.entries(data.rus.shoes)
+  const shoesLat = Object.entries(data.lat.shoes)
   const sharpingRus = Object.entries(data.rus.sharping)
   const sharpingLat = Object.entries(data.lat.sharping)
   const keysRus = Object.entries(data.rus.keys)
   const keysLat = Object.entries(data.lat.keys)
+  const otherRus = Object.entries(data.rus.other)
+  const otherLat = Object.entries(data.lat.other)
   const contactsRus = data.rus.contacts.text
   const contactsLat = data.lat.contacts.text
   const lang = useSelector((state) => state.counter.value)
@@ -33,8 +66,11 @@ export const Pricelist = () => {
   }
 
   const navItemChoice = (e, id) => {
-    setActiveNav(+e.target.id)
-    console.log(id, e.target.id)
+    if (activeNav === +e.target.id) {
+      setActiveNav(0)
+    } else {
+      setActiveNav(+e.target.id)
+    }
   }
   return (
     <>
@@ -90,73 +126,82 @@ export const Pricelist = () => {
                   )
                 })}
           </div>
+          {/* <p className={styles.pl__listTitle}>{lang ? 'Cenas' : 'Цены'}</p> */}
 
-          <div className={styles.pl__listContainer}>
-            <p className={styles.pl__listTitle}>{lang ? 'Cenas' : 'Цены'}</p>
-            <div className={styles.pl__list}>
-              <div
-                className={`${styles.pl__columnsContainer} + ${styles.pl__columnsContainerFirst}`}
-              >
-                <div>
-                  <img src={`./../assets/shoe.png`} alt='' />
-                  <ul
-                    className={`${styles.pl__itemList} + ${styles.pl__itemListFirst}`}
-                  >
-                    {+lang === 0
-                      ? shoesSecondRus.map((value, key) => {
-                          return <li key={key}>{value[1]}</li>
-                        })
-                      : shoesSecondLat.map((value, key) => {
-                          return <li key={key}>{value[1]}</li>
-                        })}
-                  </ul>
-                </div>
-                <ul
-                  className={`${styles.pl__itemList} + ${styles.pl__itemListSecond}`}
-                >
-                  {+lang === 0
-                    ? shoesFirstRus.map((value, key) => {
-                        return <li key={key}>{value[1]}</li>
-                      })
-                    : shoesFirstLat.map((value, key) => {
-                        return <li key={key}>{value[1]}, </li>
-                      })}
-                </ul>
+          <div className={styles.priceListBox}>
+            <div
+              style={{ transform: `translateX(-${activeNav}00%)` }}
+              className={styles.pricelistItem}
+            >
+              <p>hello</p>
+            </div>
+
+            <div
+              style={{ transform: `translateX(-${activeNav}00%)` }}
+              className={`${styles.pricelistItem} ${styles.shoesList}`}
+            >
+              <div>
+                {lang === 0
+                  ? shoesLat.map((item) => {
+                      if (item[0] <= 10) {
+                        return <p key={item[0]}>{item[1]}</p>
+                      }
+                    })
+                  : shoesRus.map((item) => {
+                      if (item[0] <= 10) {
+                        return <p key={item[0]}>{item[1]}</p>
+                      }
+                    })}
               </div>
-              <div className={styles.pl__columnsContainer}>
-                <div>
-                  <img
-                    className={styles.pl__knife}
-                    src='./assets/knife.png'
-                    alt=''
-                  />
-                  <ul className={styles.pl__itemList}>
-                    {+lang === 0
-                      ? sharpingRus.map((value, key) => {
-                          return <li key={key}>{value[1]}</li>
-                        })
-                      : sharpingLat.map((value, key) => {
-                          return <li key={key}>{value[1]}</li>
-                        })}
-                  </ul>
-                </div>
-                <div>
-                  <img
-                    style={{ marginTop: '5px', marginBottom: '7px' }}
-                    src='./assets/key.png'
-                    alt=''
-                  />
-                  <ul className={styles.pl__itemList}>
-                    {+lang === 0
-                      ? keysRus.map((value, key) => {
-                          return <li key={key}>{value[1]}</li>
-                        })
-                      : keysLat.map((value, key) => {
-                          return <li key={key}>{value[1]}</li>
-                        })}
-                  </ul>
-                </div>
+              <div>
+                {lang === 0
+                  ? shoesLat.map((item) => {
+                      if (item[0] > 10) {
+                        return <p key={item[0]}>{item[1]}</p>
+                      }
+                    })
+                  : shoesRus.map((item) => {
+                      if (item[0] > 10) {
+                        return <p key={item[0]}>{item[1]}</p>
+                      }
+                    })}
               </div>
+            </div>
+            <div
+              style={{ transform: `translateX(-${activeNav}00%)` }}
+              className={styles.pricelistItem}
+            >
+              {lang === 0
+                ? sharpingLat.map((item) => {
+                    return <p key={item[0]}>{item[1]}</p>
+                  })
+                : sharpingRus.map((item) => {
+                    return <p key={item[0]}>{item[1]}</p>
+                  })}
+            </div>
+            <div
+              style={{ transform: `translateX(-${activeNav}00%)` }}
+              className={styles.pricelistItem}
+            >
+              {lang === 0
+                ? keysLat.map((item) => {
+                    return <p key={item[0]}>{item[1]}</p>
+                  })
+                : keysRus.map((item) => {
+                    return <p key={item[0]}>{item[1]}</p>
+                  })}
+            </div>
+            <div
+              style={{ transform: `translateX(-${activeNav}00%)` }}
+              className={styles.pricelistItem}
+            >
+              {lang === 0
+                ? otherLat.map((item) => {
+                    return <p key={item[0]}>{item[1]}</p>
+                  })
+                : otherRus.map((item) => {
+                    return <p key={item[0]}>{item[1]}</p>
+                  })}
             </div>
           </div>
           <div className={styles.pl__extraContainer}>

@@ -15,7 +15,7 @@
 }
 
 .pricesNav {
-  width: 100%;
+  /* width: 100%; */
   height: 40px;
   background: gray;
   margin-top: 105px;
@@ -25,11 +25,39 @@
 .navItem {
   background: none;
   border: none;
-  font-size: 25px;
+  font-size: 19px;
 }
 .activeNavItem {
   border: 1px solid black;
   color: red;
+}
+.priceListBox {
+  width: 60%;
+  min-height: 300px;
+  height: min-content;
+  background: gray;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.pricelistItem > p {
+  margin: 20px auto auto 40px;
+}
+.pricelistItem {
+  height: min-content;
+  transition: all 0.5s;
+  width: 100%;
+  flex-shrink: 0;
+  margin: 30px 0 20px 0;
+}
+
+.pricelistBox {
+  width: 100%;
+}
+.shoesList {
+  display: flex;
+  justify-content: space-around;
 }
 .pricelist__container {
   min-height: 100vh;
@@ -77,7 +105,7 @@ img {
   background: rgba(0, 0, 0, 0.59);
   border: 3px solid rgba(6, 10, 11, 0.23);
   border-radius: 15px;
-  width: 95%;
+  width: 100%;
   height: 80%;
   margin: 20px auto 20px;
   display: flex;

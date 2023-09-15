@@ -6,31 +6,7 @@
       { "id": 3, "name": "Изготовление ключей" },
       { "id": 4, "name": "Другие виды работ" }
     ],
-    "shoes": {
-      "firstRow": {
-        "1": "Профилактика жен. : от 8€",
-        "2": "Замена молнии : от 12€",
-        "3": "Набойки муж. : от 8€",
-        "4": "Набойки жен. : от 8€",
-        "5": "Замена супинатора: от 10€",
-        "6": "Укрепление каблука : от 8€",
-        "7": "Замена фикс. молнии : от 4€",
-        "8": "Подклейка подошвы : от 2€",
-        "9": "Переклейка подошвы : от 10€"
-      },
-      "secondRow": {
-        "1": "Профилактика муж. : от 9€",
-        "2": "Прошивка швов : от 2€",
-        "3": "Ушивка голенищ : от 20€",
-        "4": "Замена фурнитуры : от 2€",
-        "5": "Замена вклеек : от 7€",
-        "6": "Растяжка : от 5€",
-        "7": "Чистка обуви : от 15€",
-        "8": "Прошив вокруг : от 4€",
-        "9": "Заплатки : от 7€",
-        "10": "Рубцы/носики. : от 5 €"
-      }
-    },
+
     "shoes": {
       "1": "Профилактика жен. : от 8€",
       "2": "Замена молнии : от 12€",
@@ -68,6 +44,10 @@
       "6": "Чипы для домофонов: 5€",
       "7": "Пульт для гаражной двери: 15€"
     },
+    "other": {
+      "1": "Замена ручек на сумках : от 15€",
+      "2": "Замена фурнитуры на сумках: от 2€"
+    },
     "contacts": {
       "text": "Если в списке вы не нашли то, что вас интересует, то вы всегда можете позвонить нам и уточнить интересующий вас вопрос."
     }
@@ -80,29 +60,25 @@
       { "id": 4, "name": "Citi darba veidi" }
     ],
     "shoes": {
-      "firstRow": {
-        "1": "Profilakse vīr.: no 9€",
-        "2": "Profilakse siev.: no 8€",
-        "3": "Rāvējslēdzēja maiņa : no 12€",
-        "4": "Pasitņi vir.: no 8€",
-        "5": "Pasitņi siev. : no 8€",
-        "6": "Supinātora maiņ: no 10€",
-        "7": "Papēža nostiprišāna siev. : no 8€",
-        "8": "Rāvējsledzēja fiksators maiņa : no 4€",
-        "9": "Zoles pielīmēšana : no 2€"
-      },
-      "secondRow": {
-        "1": "Apavu virsmas nošuves : no 2€",
-        "2": "Zābaku stulmu nošuves : no 20€",
-        "3": "Furnitūras maiņa : no 2€",
-        "4": "Mīkstas saistzoles maiņa : no 7€",
-        "5": "Paplašināšana : no 5€",
-        "6": "Apavu tīrīšana : no 15€",
-        "7": "Apšūšana pa perimetru : no 4€",
-        "8": "Ielāpi : no 7€",
-        "9": "Iekšējas kapes : no 5 €",
-        "10": "Zoles pārlīmēšana : no 10€"
-      }
+      "1": "Profilakse vīr.: no 9€",
+      "2": "Profilakse siev.: no 8€",
+      "3": "Rāvējslēdzēja maiņa : no 12€",
+      "4": "Pasitņi vir.: no 8€",
+      "5": "Pasitņi siev. : no 8€",
+      "6": "Supinātora maiņ: no 10€",
+      "7": "Papēža nostiprišāna siev. : no 8€",
+      "8": "Rāvējsledzēja fiksators maiņa : no 4€",
+      "9": "Zoles pielīmēšana : no 2€",
+      "10": "Apavu virsmas nošuves : no 2€",
+      "11": "Zābaku stulmu nošuves : no 20€",
+      "12": "Furnitūras maiņa : no 2€",
+      "13": "Mīkstas saistzoles maiņa : no 7",
+      "14": "Paplašināšana : no 5€",
+      "15": "Apavu tīrīšana : no 15€",
+      "16": "Apšūšana pa perimetru : no 4€",
+      "17": "Ielāpi : no 7€",
+      "18": "Iekšējas kapes : no 5 €",
+      "19": "Zoles pārlīmēšana : no 10€"
     },
     "sharping": {
       "1": "Virtuves nažu asināšana : no 2€",
@@ -119,6 +95,10 @@
       "5": "Krusta atslēgas: no 6€",
       "6": "Čipi domofoniem: 5€",
       "7": "Garāžas durvju tālvadības pults: 15€"
+    },
+    "other": {
+      "1": "Rokturu nomaiņa somām: no 15€",
+      "2": "Piederumu maiņa somām: no 2€"
     },
     "contacts": {
       "text": "Ja sarakstā neatradāt interesējošo, vienmēr varat mums piezvanīt un precizēt savu jautājumu."
