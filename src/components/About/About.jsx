@@ -28,7 +28,7 @@ export const About = () => {
       ) : (
         <section className={styles.about__container} style={aboutStyle}>
           <div className={styles.features}>
-            <ul className={styles.about__feturesList}>
+            <ul style={{ padding: 0 }} className={styles.about__feturesList}>
               <div
                 className={`${styles.features__wrp} + ${styles.features__firstBox}`}
               >
@@ -46,9 +46,9 @@ export const About = () => {
                       />
                     </svg>
                   </span>
-                  <p className={styles.features__title}>
+                  <h2 className={styles.features__title}>
                     {!lang ? data.rus[1].title : data.lat[1].title}
-                  </p>
+                  </h2>
                 </li>
 
                 <li className={styles.features__text}>
@@ -70,9 +70,9 @@ export const About = () => {
                       />
                     </svg>
                   </span>
-                  <p className={styles.features__title}>
+                  <h2 className={styles.features__title}>
                     {!lang ? data.rus[2].title : data.lat[2].title}
-                  </p>
+                  </h2>
                 </li>
 
                 <li className={styles.features__text}>
@@ -97,9 +97,9 @@ export const About = () => {
                       />
                     </svg>
                   </span>
-                  <p className={styles.features__title}>
+                  <h2 className={styles.features__title}>
                     {!lang ? data.rus[3].title : data.lat[3].title}
-                  </p>
+                  </h2>
                 </li>
                 <li className={styles.features__text}>
                   {!lang ? data.rus[3].text : data.lat[3].text}
@@ -108,9 +108,9 @@ export const About = () => {
             </ul>
           </div>
           <div className={styles.aboutUs}>
-            <p className={styles.aboutUs__title}>
+            <h2 className={styles.aboutUs__title}>
               {!lang ? data.rus[4].title : data.lat[4].title}
-            </p>
+            </h2>
             <p className={styles.aboutUs__text}>
               {!lang ? data.rus[4].text : data.lat[4].text}
             </p>

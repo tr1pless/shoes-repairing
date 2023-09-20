@@ -46,7 +46,9 @@
     },
     "other": {
       "1": "Замена ручек на сумках : от 15€",
-      "2": "Замена фурнитуры на сумках: от 2€"
+      "2": "Замена фурнитуры на сумках: от 2€",
+      "3": "Замена батареек в часах: 8€",
+      "4": "Изменение длины браслета на часах: от 4€"
     },
     "contacts": {
       "text": "Если в списке вы не нашли то, что вас интересует, то вы всегда можете позвонить нам и уточнить интересующий вас вопрос."
@@ -98,7 +100,9 @@
     },
     "other": {
       "1": "Rokturu nomaiņa somām: no 15€",
-      "2": "Piederumu maiņa somām: no 2€"
+      "2": "Piederumu maiņa somām: no 2€",
+      "3": "Pulksteņu bateriju nomaiņa: 8€",
+      "4": "Pulksteņa rokassprādzes garuma maiņa: no 4€"
     },
     "contacts": {
       "text": "Ja sarakstā neatradāt interesējošo, vienmēr varat mums piezvanīt un precizēt savu jautājumu."

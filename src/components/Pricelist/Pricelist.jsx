@@ -87,121 +87,129 @@ export const Pricelist = () => {
         </section>
       ) : (
         <section className={styles.pricelist__container} style={pricesStyle}>
-          <div className={styles.pricesNav}>
-            {+lang === 0
-              ? navRus.map((item) => {
-                  return (
-                    <button
-                      className={
-                        activeNav === item.id
-                          ? `${styles.navItem} ${styles.activeNavItem}`
-                          : `${styles.navItem}`
-                      }
-                      id={item.id}
-                      onClick={(e) => {
-                        navItemChoice(e, item.id)
-                      }}
-                      key={item.id}
-                    >
-                      {item.name}
-                    </button>
-                  )
-                })
-              : navLat.map((item) => {
-                  return (
-                    <button
-                      className={
-                        activeNav === item.id
-                          ? `${styles.navItem} ${styles.activeNavItem}`
-                          : `${styles.navItem}`
-                      }
-                      id={item.id}
-                      onClick={(e) => {
-                        navItemChoice(e, item.id)
-                      }}
-                      key={item.id}
-                    >
-                      {item.name}
-                    </button>
-                  )
-                })}
-          </div>
-          {/* <p className={styles.pl__listTitle}>{lang ? 'Cenas' : 'Цены'}</p> */}
-
-          <div className={styles.priceListBox}>
-            <div
-              style={{ transform: `translateX(-${activeNav}00%)` }}
-              className={styles.pricelistItem}
-            >
-              <p>hello</p>
+          <div className={styles.pricesWrp}>
+            <div className={styles.pricesNav}>
+              {+lang === 0
+                ? navRus.map((item) => {
+                    return (
+                      <button
+                        className={
+                          activeNav === item.id
+                            ? `${styles.navItem} ${styles.activeNavItem}`
+                            : `${styles.navItem}`
+                        }
+                        id={item.id}
+                        onClick={(e) => {
+                          navItemChoice(e, item.id)
+                        }}
+                        key={item.id}
+                      >
+                        {item.name}
+                      </button>
+                    )
+                  })
+                : navLat.map((item) => {
+                    return (
+                      <button
+                        className={
+                          activeNav === item.id
+                            ? `${styles.navItem} ${styles.activeNavItem}`
+                            : `${styles.navItem}`
+                        }
+                        id={item.id}
+                        onClick={(e) => {
+                          navItemChoice(e, item.id)
+                        }}
+                        key={item.id}
+                      >
+                        {item.name}
+                      </button>
+                    )
+                  })}
             </div>
+            <div className={styles.priceListBox}>
+              <div
+                style={{ transform: `translateX(-${activeNav}00%)` }}
+                className={styles.pricelistItem}
+              >
+                <p
+                  style={{ margin: '  auto ' }}
+                  className={styles.pricelistText}
+                >
+                  {+lang === 0
+                    ? 'Все цены за исключением ключей могут отличаться в зависимости от усложняющих ремонт нюансов. Так же цены могут быть ниже при больших объемах работы. Так же мы делаем скидки для больших обьемов изготовленя ключей и чипов.'
+                    : 'Visas cenas, izņemot atslēgas, var atšķirties atkarībā no niansēm, kas sarežģī remontu. Tāpat cenas var būt zemākas lieliem darbu apjomiem. Piedāvājam arī atlaides liela apjoma atslēgām un čipām.'}
+                </p>
+              </div>
 
-            <div
-              style={{ transform: `translateX(-${activeNav}00%)` }}
-              className={`${styles.pricelistItem} ${styles.shoesList}`}
-            >
-              <div>
-                {lang === 0
-                  ? shoesLat.map((item) => {
-                      if (item[0] <= 10) {
-                        return <p key={item[0]}>{item[1]}</p>
-                      }
+              <div
+                style={{ transform: `translateX(-${activeNav}00%)` }}
+                className={`${styles.pricelistItem} ${styles.shoesList}`}
+              >
+                <div>
+                  {+lang === 1
+                    ? shoesLat.map((item) => {
+                        if (item[0] <= 10) {
+                          console.log(lang)
+                          return <p key={item[0]}>{item[1]}</p>
+                        }
+                      })
+                    : shoesRus.map((item) => {
+                        if (item[0] <= 10) {
+                          return <p key={item[0]}>{item[1]}</p>
+                        }
+                      })}
+                </div>
+                <div>
+                  {+lang === 1
+                    ? shoesLat.map((item) => {
+                        if (item[0] > 10) {
+                          return <p key={item[0]}>{item[1]}</p>
+                        }
+                      })
+                    : shoesRus.map((item) => {
+                        if (item[0] > 10) {
+                          return <p key={item[0]}>{item[1]}</p>
+                        }
+                      })}
+                </div>
+              </div>
+              <div
+                style={{ transform: `translateX(-${activeNav}00%)` }}
+                className={styles.pricelistItem}
+              >
+                {+lang === 1
+                  ? sharpingLat.map((item) => {
+                      return <p key={item[0]}>{item[1]}</p>
                     })
-                  : shoesRus.map((item) => {
-                      if (item[0] <= 10) {
-                        return <p key={item[0]}>{item[1]}</p>
-                      }
+                  : sharpingRus.map((item) => {
+                      return <p key={item[0]}>{item[1]}</p>
                     })}
               </div>
-              <div>
-                {lang === 0
-                  ? shoesLat.map((item) => {
-                      if (item[0] > 10) {
-                        return <p key={item[0]}>{item[1]}</p>
-                      }
+              <div
+                style={{ transform: `translateX(-${activeNav}00%)` }}
+                className={styles.pricelistItem}
+              >
+                {+lang === 1
+                  ? keysLat.map((item) => {
+                      return <p key={item[0]}>{item[1]}</p>
                     })
-                  : shoesRus.map((item) => {
-                      if (item[0] > 10) {
-                        return <p key={item[0]}>{item[1]}</p>
-                      }
+                  : keysRus.map((item) => {
+                      return <p key={item[0]}>{item[1]}</p>
                     })}
               </div>
-            </div>
-            <div
-              style={{ transform: `translateX(-${activeNav}00%)` }}
-              className={styles.pricelistItem}
-            >
-              {lang === 0
-                ? sharpingLat.map((item) => {
-                    return <p key={item[0]}>{item[1]}</p>
-                  })
-                : sharpingRus.map((item) => {
-                    return <p key={item[0]}>{item[1]}</p>
-                  })}
-            </div>
-            <div
-              style={{ transform: `translateX(-${activeNav}00%)` }}
-              className={styles.pricelistItem}
-            >
-              {lang === 0
-                ? keysLat.map((item) => {
-                    return <p key={item[0]}>{item[1]}</p>
-                  })
-                : keysRus.map((item) => {
-                    return <p key={item[0]}>{item[1]}</p>
-                  })}
-            </div>
-            <div
-              style={{ transform: `translateX(-${activeNav}00%)` }}
-              className={styles.pricelistItem}
-            >
-              {lang === 0
-                ? otherLat.map((item) => {
-                    return <p key={item[0]}>{item[1]}</p>
-                  })
-                : otherRus.map((item) => {
-                    return <p key={item[0]}>{item[1]}</p>
-                  })}
+              <div
+                style={{ transform: `translateX(-${activeNav}00%)` }}
+                className={styles.pricelistItem}
+              >
+                {+lang === 1
+                  ? otherLat.map((item) => {
+                      return <p key={item[0]}>{item[1]}</p>
+                    })
+                  : otherRus.map((item) => {
+                      return <p key={item[0]}>{item[1]}</p>
+                    })}
+              </div>
             </div>
           </div>
           <div className={styles.pl__extraContainer}>
