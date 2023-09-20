@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Triangle } from 'react-loader-spinner'
+import { InfinitySpin } from 'react-loader-spinner'
 import {
   contactsStyle,
   mailImage,
@@ -33,14 +33,7 @@ export const Contacts = () => {
       />
       {loading ? (
         <section className={styles.spinnerWrp} style={mainStyle}>
-          <Triangle
-            height='300'
-            width='300'
-            radius='20'
-            color='#7ba4bd'
-            ariaLabel='triangle-loading'
-            visible={true}
-          />
+          <InfinitySpin width='200' color='rgb(160 45 34)' />
         </section>
       ) : (
         <div style={contactsStyle} className={styles.contacts}>

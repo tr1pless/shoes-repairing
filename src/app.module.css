@@ -37,3 +37,10 @@ a {
   justify-content: space-between;
   flex-direction: row;
 }
+
+@media screen and (min-width: 2000px) {
+  p,
+  li {
+    font-size: 30px;
+  }
+}

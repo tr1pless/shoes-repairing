@@ -143,7 +143,7 @@ export const mailImage = {
 export const serviceContacts = [
   {
     email: 'rivasiela4@gmail.com',
-    phone: '+37129730629',
+    phone: '+37129993961',
   },
 ]
 

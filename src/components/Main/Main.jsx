@@ -4,7 +4,7 @@ import { mainStyle } from '../Constants'
 import data from '../language/main.json'
 import { useSelector } from 'react-redux'
 import styles from './main.module.css'
-import { Triangle } from 'react-loader-spinner'
+import { InfinitySpin } from 'react-loader-spinner'
 
 export const Main = () => {
   const rusText = Object.entries(data.rus.text)
@@ -50,14 +50,7 @@ export const Main = () => {
         </section>
       ) : (
         <section className={styles.spinnerWrp} style={mainStyle}>
-          <Triangle
-            height='300'
-            width='300'
-            radius='20'
-            color='#7ba4bd'
-            ariaLabel='triangle-loading'
-            visible={true}
-          />
+          <InfinitySpin width='200' color='rgb(160 45 34)' />
         </section>
       )}
     </>

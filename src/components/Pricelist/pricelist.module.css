@@ -11,9 +11,74 @@
 }
 .spinnerWrp {
   background-color: #fcfcfc;
-  background-image: linear-gradient(34deg, #010341 11%, #0c031d 100%);
+  background-image: linear-gradient(34deg, #111112 11%, #0c031d 100%);
+}
+.pricesWrp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 105px;
+  height: min-content;
+}
+.pricesNav {
+  height: 300px;
+  background: linear-gradient(270deg, #0e0918c2 0%, #020101a3 100%);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 0 auto;
+}
+.navItem {
+  transition: all 0.5s;
+  background: none;
+  border: none;
+  font-size: 19px;
+  height: 25%;
+  width: 100%;
+  color: #adacad;
+}
+.activeNavItem {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background: linear-gradient(298deg, #1e1e27 12%, #130a07 100%);
+  color: #acacac;
+  box-shadow: 0px 0px 14px 9px rgba(0, 0, 0, 0.75);
+}
+.priceListBox {
+  width: 60%;
+  min-height: 300px;
+  height: min-content;
+  background: linear-gradient(270deg, #0b0503 0%, #1e1e27 100%);
+  color: #acacac;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  margin: 0 auto 0 0;
+  box-shadow: 0px 0px 17px 12px rgba(0, 0, 0, 0.75);
+  align-items: center;
 }
 
+.pricelistItem {
+  height: min-content;
+  transition: all 0.5s;
+  width: 100%;
+  flex-shrink: 0;
+  text-align: center;
+}
+.pricelistText {
+  font-size: 20px;
+
+  width: 60%;
+}
+
+.pricelistBox {
+  width: 100%;
+}
+.shoesList {
+  display: flex;
+  justify-content: space-around;
+}
 .pricelist__container {
   min-height: 100vh;
   overflow: hidden;
@@ -26,63 +91,10 @@ li {
   font-size: 18px;
 }
 
-.pl__columnsContainer {
-  display: flex;
-}
-
-.pl__listContainer {
-  background: rgba(23, 16, 16, 0.53);
-  border: 3px solid #625a5a;
-  height: 65%;
-  width: 90%;
-  margin-top: 100px;
-}
 img {
   padding-left: 39px;
 }
 
-.pl__listTitle {
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 35px;
-  text-align: center;
-
-  color: #c0b1e2;
-}
-
-.pl__itemListSecond {
-  padding-top: 61px;
-}
-
-.pl__list {
-  background: rgba(0, 0, 0, 0.59);
-  border: 3px solid rgba(6, 10, 11, 0.23);
-  border-radius: 15px;
-  width: 95%;
-  height: 80%;
-  margin: 20px auto 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  white-space: pre-wrap;
-}
-
-.pl__itemList {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 100;
-  font-size: 19px;
-  line-height: 30px;
-  text-align: center;
-  color: #ffffff;
-  margin-top: 0;
-}
 .pl__extraContainer {
   height: 16%;
   background: rgba(0, 0, 0, 0.63);
@@ -253,5 +265,26 @@ img {
   }
   ul {
     padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .pricesWrp {
+    flex-direction: column;
+  }
+  .pricesNav {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .priceListBox {
+    width: 90%;
+    margin: 0 auto 0;
+  }
+  .shoesList {
+    display: flex;
+    flex-direction: column;
+  }
+  .pricelistItem {
+    text-align: center;
   }
 }
