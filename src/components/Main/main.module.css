@@ -8,62 +8,85 @@
   overflow: hidden;
   margin: 0;
   padding: 0;
+  filter: brightness(0.5);
 }
 .spinnerWrp {
   background-color: #fcfcfc;
   background-image: linear-gradient(34deg, #010341 11%, #0c031d 100%);
 }
 
-.welcome {
-  width: 70%;
-  height: 40%;
-  background: rgba(12, 7, 7, 0.68);
-  border: 2px solid rgba(109, 105, 105, 0.6);
-  border-radius: 20px;
-  margin-top: 10%;
+.mainTitle {
+  z-index: 1;
+  width: 90%;
   display: flex;
-  align-items: center;
-  text-align: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.mainTitleText {
+  font-family: 'Russo One', sans-serif;
+
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 4.5vw;
+  color: #fbd9d3;
+  margin-top: 70px;
+  margin-bottom: 0;
+  letter-spacing: 4px;
+  text-shadow: -7px -6px 7px #000000;
 }
 
-.text {
-  /* font-family: "Inknut Antiqua"; */
-  font-style: normal;
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 50px;
-  margin: 20px 40px;
+.mainAboutTitle {
+  width: max-content;
+  font-size: 3.7vw;
+  margin: 50px auto 0 45%;
   color: #ffffff;
+  font-family: 'Alice', serif;
+  font-weight: 700;
 }
-.carouselImage {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.mainList {
+  margin-left: auto;
+  text-align: end;
 }
-
-.carousel__text {
-  height: 200px;
-  font-size: 25px;
-  text-align: center;
-  margin: 0 100px 0;
-  display: flex;
-  align-items: center;
-  line-height: 46px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 500;
-  color: #b9afff;
+.mainListItem {
+  font-family: 'Alice', serif;
+  font-size: 1.9vw;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fbd9d3;
 }
 
-@media screen and (max-width: 767px) {
-  .carousel__text {
-    margin: auto 50px;
-    height: 300px;
+@media screen and (max-width: 768px) {
+  .mainTitle {
+    justify-content: space-around;
+  }
+
+  .mainTitleText {
+    font-size: 7vw;
+  }
+  .mainListItem {
+    font-size: 3vw;
+  }
+
+  .mainAboutTitle {
+    font-size: 6vw;
+    margin: 0px auto 0 45%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .carousel__text {
-    font-size: 17px;
+  .mainTitle {
+    justify-content: space-around;
+  }
+
+  .mainTitleText {
+    font-size: 8vw;
+  }
+  .mainListItem {
+    font-size: 3.5vw;
+  }
+
+  .mainAboutTitle {
+    font-size: 7vw;
+    margin: 0px auto 0 45%;
   }
 }
