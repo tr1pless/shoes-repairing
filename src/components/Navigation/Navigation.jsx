@@ -82,7 +82,6 @@ export const Navigation = () => {
             className={styles.navigation__lvru}
             onClick={() => dispatch(language())}
           >
-            {/* {+lang === 0 ? latvian : russian} */}
             {+lang === 0 ? 'LV' : 'RU'}
           </button>
           <li className={styles.list__item}>

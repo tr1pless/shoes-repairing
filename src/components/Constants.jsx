@@ -9,7 +9,6 @@ export const mainStyle = {
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
 }
 
 export const aboutStyle = {
