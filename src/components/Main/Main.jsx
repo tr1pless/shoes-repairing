@@ -69,7 +69,7 @@ export const Main = () => {
                 </li>
               ) : (
                 <li className={styles.mainListItem}>
-                  Vienmēr gatavs apmierināt klienta vajadzības.
+                  Vienmēr esam gatavi apmierināt klienta vajadzības.
                 </li>
               )}
               {!lang ? (
