@@ -206,7 +206,14 @@ img {
   .pl__listContainer {
     width: 97%;
   }
+  .pricelist__container {
+    font-size: 22px;
+  }
+  .pl__extraContainer {
+    width: 68%;
+  }
 }
+
 @media screen and (max-width: 1000px) {
   li {
     font-size: 18px;

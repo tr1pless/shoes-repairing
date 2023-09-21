@@ -10,16 +10,28 @@
   text-transform: uppercase;
   transition: all 0.3s;
 }
+/* .navigation__lvru { */
+/* opacity: 0.5; */
+/* margin: 0; */
+/* padding: 0; */
+/* background: none; */
+/* border: none; */
+/* position: absolute; */
+/* top: 22px; */
+/* left: 4%; */
+/* transition: 1s; */
+/* } */
+
 .navigation__lvru {
-  opacity: 0.5;
-  margin: 0;
-  padding: 0;
   background: none;
   border: none;
   position: absolute;
-  top: 22px;
-  left: 4%;
+  left: 2%;
   transition: 1s;
+  font-size: 15px;
+  font-weight: 700;
+  color: #a5e8d3;
+  opacity: 0.5;
 }
 
 .navigation__lvru:hover {
