@@ -10,16 +10,17 @@
   text-transform: uppercase;
   transition: all 0.3s;
 }
+
 .navigation__lvru {
-  opacity: 0.5;
-  margin: 0;
-  padding: 0;
   background: none;
   border: none;
   position: absolute;
-  top: 22px;
-  left: 4%;
+  left: 2%;
   transition: 1s;
+  font-size: 15px;
+  font-weight: 700;
+  color: #a5e8d3;
+  opacity: 0.5;
 }
 
 .navigation__lvru:hover {
@@ -50,7 +51,6 @@ a {
   position: absolute;
   box-sizing: border-box;
   width: 100%;
-  /* height: 10%; */
   left: 0px;
   top: 0;
   background: linear-gradient(
@@ -58,7 +58,6 @@ a {
     #050404 -31.68%,
     rgba(8, 8, 14, 0.2) 100%
   );
-  border-bottom: 2px solid rgba(46, 42, 42, 0.5);
 }
 
 .list {
