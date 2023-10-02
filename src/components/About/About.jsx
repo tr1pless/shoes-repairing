@@ -23,7 +23,7 @@ export const About = () => {
       />
       {loading ? (
         <section className={styles.spinnerWrp} style={mainStyle}>
-          <InfinitySpin width='200' color='rgb(160 45 34)' />
+          <InfinitySpin width='200' color='rgb(160 45 34) ' />
         </section>
       ) : (
         <section className={styles.about__container} style={aboutStyle}>

@@ -1,3 +1,18 @@
+.navigation {
+  z-index: 2;
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  left: 0px;
+  top: 0;
+  background: linear-gradient(
+    180deg,
+    #050404 -31.68%,
+    rgba(8, 8, 14, 0.2) 100%
+  );
+  box-shadow: 0px 0px 32px 10px #03020ebf;
+}
+
 .list__item,
 .list__link {
   font-family: 'Josefin Slab';
@@ -46,20 +61,6 @@ a {
   text-decoration: none;
 }
 
-.navigation {
-  z-index: 2;
-  position: absolute;
-  box-sizing: border-box;
-  width: 100%;
-  left: 0px;
-  top: 0;
-  background: linear-gradient(
-    180deg,
-    #050404 -31.68%,
-    rgba(8, 8, 14, 0.2) 100%
-  );
-}
-
 .list {
   padding-left: 20px;
   margin: 20px 10%;
@@ -89,5 +90,14 @@ a {
 
   .active__link {
     font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .list__link {
+    font-size: 35px;
+  }
+  .active__link {
+    font-size: 37px;
   }
 }
