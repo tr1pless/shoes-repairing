@@ -13,13 +13,47 @@ import {
 } from '../Constants'
 import styles from './contacts.module.css'
 import { useSelector } from 'react-redux'
+import emailjs from '@emailjs/browser'
+import Swal from 'sweetalert2'
 
 export const Contacts = () => {
   const [active, setActive] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [message, setMessage] = useState('')
+
   const lang = useSelector((state) => state.counter.value)
   const handleLoad = () => {
     setLoading(false)
+  }
+
+  const SERVICE_ID = 'service_pgajy1j'
+  const TEMPLATE_ID = 'template_o4uzvg9'
+  const USER_ID = 'TR5PHEAy4hnjGz-gg'
+
+  const sendMessage = (e) => {
+    e.preventDefault()
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
+      (result) => {
+        console.log(result.text)
+        Swal.fire({
+          icon: 'success',
+          title:
+            'Thank you for your message, i will answer you as soon as possible',
+        })
+      },
+      (error) => {
+        console.log(error.text)
+        Swal.fire({
+          icon: 'error',
+          title: 'Ooops, something went wrong',
+          text: error.text,
+        })
+      },
+    )
+    e.target.reset()
   }
 
   return (
@@ -82,6 +116,49 @@ export const Contacts = () => {
               </p>
               <div className={styles.contacts__mapPointer}>{arrow}</div>
             </div>
+          </div>
+          <div className={styles.contactForm}>
+            <form onSubmit={sendMessage}>
+              <div className={styles.inputWrapper}>
+                <input
+                  className={styles.contactInput}
+                  type='text'
+                  value={name}
+                  placeholder='YOUR NAME'
+                  name='user_name'
+                  onChange={(e) => setName(e.value)}
+                />
+                <input
+                  className={styles.contactInput}
+                  type='text'
+                  value={email}
+                  placeholder='YOUR EMAIL'
+                  name='user_email'
+                  onChange={(e) => setEmail(e.value)}
+                />
+                <input
+                  className={styles.contactInput}
+                  type='text'
+                  value={phone}
+                  name='user_phone'
+                  placeholder='PHONE NUMBER'
+                  onChange={(e) => setPhone(e.value)}
+                />
+              </div>
+              <div className={styles.contactFormMiddle}>
+                <input
+                  className={`${styles.contactInput} ${styles.contactMessage}`}
+                  type='text'
+                  value={message}
+                  placeholder='YOUR MESSAGE'
+                  name='user_message'
+                  onChange={(e) => setMessage(e.value)}
+                />
+              </div>
+              <button className={styles.contactButton}>
+                {+lang === 0 ? 'отправить' : 'nosūtīt'}
+              </button>
+            </form>
           </div>
           <div className={styles.contacts__list}>
             <ul className={styles.contacts__linksList}>

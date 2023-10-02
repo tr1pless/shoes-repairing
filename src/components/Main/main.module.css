@@ -11,8 +11,11 @@
   filter: brightness(0.5);
 }
 .spinnerWrp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fcfcfc;
-  background-image: linear-gradient(34deg, #010341 11%, #0c031d 100%);
+  background-image: linear-gradient(34deg, #111112 11%, #0c031d 100%);
 }
 
 .mainTitle {
@@ -28,8 +31,8 @@
   text-transform: uppercase;
   font-weight: 800;
   font-size: 4.5vw;
-  color: #fbd9d3;
-  margin-top: 70px;
+  color: #efeceb;
+  margin-top: 100px;
   margin-bottom: 0;
   letter-spacing: 4px;
   text-shadow: -7px -6px 7px #000000;
@@ -54,7 +57,11 @@
   margin-bottom: 15px;
   color: #fbd9d3;
 }
-
+@media screen and (min-width: 1900px) {
+  .mainListItem {
+    margin: 50px 0;
+  }
+}
 @media screen and (max-width: 768px) {
   .mainTitle {
     justify-content: space-around;

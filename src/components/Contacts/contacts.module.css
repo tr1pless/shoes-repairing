@@ -10,8 +10,11 @@
   padding: 0;
 }
 .spinnerWrp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fcfcfc;
-  background-image: linear-gradient(34deg, #010341 11%, #0c031d 100%);
+  background-image: linear-gradient(34deg, #111112 11%, #0c031d 100%);
 }
 
 .contacts {
@@ -82,6 +85,68 @@
   border-radius: 0 30px 30px 0;
 }
 
+.contactForm {
+  height: 400px;
+  width: 100%;
+  background: #000000d4;
+  border: 2px solid #3e3c3c52;
+  box-shadow: 0px 0px 25px 10px #000000cc;
+  margin: 40px 0;
+}
+
+.inputWrapper {
+  display: flex;
+  margin: 75px 100px;
+  justify-content: space-between;
+}
+.contactInput {
+  width: 300px;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid #938686;
+  color: white;
+  font-size: 18px;
+  transition: all 1s;
+}
+
+.contactMessage {
+  width: 500px;
+}
+
+.contactButton {
+  margin: 0px 100px 75px;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-size: 21px;
+  color: white;
+  transition: all 0.5s;
+}
+.contactButton:hover {
+  color: #05e1e1;
+  transform: scale(1.1);
+}
+
+.contactInput:after {
+  transition: all ease-in-out 0.2s;
+  background: none repeat scroll 0 0 #05e1e1;
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0;
+}
+.contactInput:hover:after {
+  width: 100%;
+}
+input:focus {
+  outline: none;
+  border-bottom: 2px solid #05e1e1;
+}
+
+.contactFormMiddle {
+  margin: 75px 100px;
+}
+
 .contacts__listLink {
   display: flex;
   flex-direction: row;
@@ -136,6 +201,27 @@
   color: blue;
   font-weight: 700;
 }
+@media screen and (max-width: 1200px) {
+  .contactInput {
+    width: 200px;
+  }
+  .contactMessage {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .inputWrapper,
+  .contactFormMiddle {
+    margin: 50px 50px;
+  }
+  .contactButton {
+    margin: 0px 50px 50px;
+  }
+  .contactForm {
+    height: 300px;
+  }
+}
 
 @media screen and (max-width: 767px) {
   .contacts {
@@ -166,6 +252,29 @@
   .contacts__linksList {
     margin-bottom: 0;
     padding-right: 0;
+  }
+  .inputWrapper {
+    margin: 0px 40px;
+  }
+  .contactFormMiddle {
+    margin: 40px 40px;
+  }
+  .contactButton {
+    margin: 0px 40px 40px;
+    font-size: 18px;
+  }
+  .contactForm {
+    height: max-content;
+  }
+  .inputWrapper {
+    flex-direction: column;
+  }
+  .contactInput {
+    margin: 50px 0 0;
+    font-size: 16px;
+  }
+  .contactMessage {
+    width: 350px;
   }
 }
 
