@@ -257,6 +257,9 @@ img {
   .extraText {
     font-size: 23px;
   }
+  .priceListBox {
+    align-items: start;
+  }
 }
 @media screen and (min-width: 500px) and (max-width: 800px) {
   img {
