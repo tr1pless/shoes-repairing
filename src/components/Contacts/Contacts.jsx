@@ -34,26 +34,31 @@ export const Contacts = () => {
   const USER_ID = 'TR5PHEAy4hnjGz-gg'
 
   const sendMessage = (e) => {
-    e.preventDefault()
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
-      (result) => {
-        console.log(result.text)
-        Swal.fire({
-          icon: 'success',
-          title:
-            'Thank you for your message, i will answer you as soon as possible',
-        })
-      },
-      (error) => {
-        console.log(error.text)
-        Swal.fire({
-          icon: 'error',
-          title: 'Ooops, something went wrong',
-          text: error.text,
-        })
-      },
-    )
-    e.target.reset()
+    if (email !== '' && name !== '' && phone !== '' && message !== '') {
+      e.preventDefault()
+      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
+        (result) => {
+          console.log(result.text)
+          Swal.fire({
+            icon: 'success',
+            title:
+              'Thank you for your message, i will answer you as soon as possible',
+          })
+        },
+        (error) => {
+          console.log(error.text)
+          Swal.fire({
+            icon: 'error',
+            title: 'Ooops, something went wrong',
+            text: error.text,
+          })
+        },
+      )
+      e.target.reset()
+    } else {
+      e.preventDefault()
+      alert('Заполните все поля')
+    }
   }
 
   return (
@@ -118,6 +123,10 @@ export const Contacts = () => {
             </div>
           </div>
           <div className={styles.contactForm}>
+            <div className={styles.contactFormDecorUp}></div>
+
+            <div className={styles.contactFormDecor}></div>
+
             <form onSubmit={sendMessage}>
               <div className={styles.inputWrapper}>
                 <input

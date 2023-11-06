@@ -76,6 +76,9 @@ export const Navigation = () => {
   return (
     <>
       <nav className={styles.navigation}>
+        <div className={styles.downLine}></div>
+        <div className={styles.downLineUp}></div>
+
         <ul className={styles.list}>
           <button
             name='language'
