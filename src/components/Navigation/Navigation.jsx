@@ -139,7 +139,7 @@ export const Navigation = () => {
         <Route path='/about' element={<About />} />
         <Route path='/pricelist' element={<Pricelist />} />
         <Route path='/contacts' element={<Contacts />} />
-        <Route path='*' element={<Main />} />
+{/*         <Route path='*' element={<Main />} /> */}
       </Routes>
     </>
   )
