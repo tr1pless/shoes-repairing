@@ -34,6 +34,7 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <App />
+        <Ad/>
         {/* <AdSense.Google */}
   {/* client='ca-pub-3179825736250948' */}
   {/* slot='f08c47fec0942fa0' */}
