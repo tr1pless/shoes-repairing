@@ -5,7 +5,7 @@ import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import store from './components/store/store'
 import { Provider } from 'react-redux'
-import { Adsense } from './components/Adsense/Adsense'
+import AdSense from 'react-adsense'
 
 
 export const root = ReactDOM.createRoot(document.getElementById('root'))
@@ -15,7 +15,14 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <App />
-        <Adsense/>
+        <AdSense.Google
+  client='ca-pub-3179825736250948'
+  slot='f08c47fec0942fa0'
+  style={{ display: 'block' }}
+  format='auto'
+  responsive='true'
+  layoutKey='-gw-1+2a-9x+5c'
+/>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

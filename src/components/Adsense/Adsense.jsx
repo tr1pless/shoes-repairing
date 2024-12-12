@@ -25,7 +25,7 @@ export const Adsense = () => {
                 data-ad-client="ca-pub-3179825736250948"
                 data-ad-slot='f08c47fec0942fa0'
                 data-ad-format="auto"
-                data-full-width-responsive="true">
+               >
             </ins>
         </>
     );
