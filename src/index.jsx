@@ -17,7 +17,7 @@ root.render(
         <App />
         <AdSense.Google
   client='ca-pub-3179825736250948'
-  slot='f08c47fec0942fa0'
+  slot='5242655036'
   style={{ display: 'block' }}
   format='auto'
   responsive='true'
