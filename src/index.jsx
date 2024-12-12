@@ -22,8 +22,8 @@ const Ad = props => {
       <ins 
         className="adsbygoogle"
 	    style={{display:'inline-block',width:'728px',height:'90px'}}
-	    data-ad-client="ca-pub-1234567890123456"
-	    data-ad-slot="1234567890"
+	    data-ad-client="pub-3179825736250948"
+	    data-ad-slot="5242655036"
       />
     </div>
   )
