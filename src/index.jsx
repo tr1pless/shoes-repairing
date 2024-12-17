@@ -26,7 +26,6 @@ const Ad = () => {
         data-ad-slot="5242655036"
         >
       </ins>
-
     </>
   )
 }
@@ -36,14 +35,14 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <App />
-        <AdSense.Google
-  client='ca-pub-3179825736250948'
-  slot='f08c47fec0942fa0'
-  style={{ display: 'block' }}
-  format='auto'
-  responsive='true'
-  layoutKey='-gw-1+2a-9x+5c'
-/>
+        {/* <AdSense.Google */}
+  {/*  client='ca-pub-3179825736250948' */}
+  {/*  slot='f08c47fec0942fa0' */}
+  {/*  style={{ display: 'block' }} */}
+  {/*  format='auto' */}
+  {/*  responsive='true' */}
+  {/*  layoutKey='-gw-1+2a-9x+5c' */}
+{/* /> */}
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
