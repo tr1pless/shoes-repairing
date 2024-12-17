@@ -11,21 +11,23 @@ import { Provider } from 'react-redux'
 
 export const root = ReactDOM.createRoot(document.getElementById('root'))
 
-const Ad = props => {
+const Ad = () => {
   useEffect(() => {
-    window.adsbygoogle = window.adsbygoogle || []
-    window.adsbygoogle.push({})
-  })
-  
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.adsbygoogle.push({});
+  }, [])
   return (
-    <div>
-      <ins 
-        className="adsbygoogle"
-	    style={{display:'inline-block',width:'728px',height:'90px'}}
-	    data-ad-client="pub-3179825736250948"
-	    data-ad-slot="5242655036"
-      />
-    </div>
+    <>
+      <ins className="adsbygoogle"
+        style={{display:"block", width:"250px"}}
+        data-ad-format="fluid"
+        data-ad-layout-key="-fb+5w+4e-db+86"
+        data-ad-client="ca-pub-3179825736250948"
+        data-ad-slot="5242655036"
+        >
+      </ins>
+
+    </>
   )
 }
 
@@ -35,14 +37,7 @@ root.render(
       <BrowserRouter>
         <App />
         <Ad/>
-        {/* <AdSense.Google */}
-  {/* client='ca-pub-3179825736250948' */}
-  {/* slot='f08c47fec0942fa0' */}
-  {/* style={{ display: 'block' }} */}
-  {/* format='auto' */}
-  {/* responsive='true' */}
-  {/* layoutKey='-gw-1+2a-9x+5c' */}
-{/* /> */}
+        
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
