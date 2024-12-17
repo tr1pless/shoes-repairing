@@ -4,7 +4,7 @@ import {Adsense} from '@ctrl/react-adsense';
 
 export const AdComp = () => {
     <Adsense
-  client="pub-3179825736250948"
+  client="ca-pub-3179825736250948"
   slot="5242655036"
   style={{ display: 'block' }}
   layout="in-article"
