@@ -141,6 +141,7 @@ export const Navigation = () => {
         <Route path='/contacts' element={<Contacts />} />
 {/*         <Route path='*' element={<Main />} /> */}
       </Routes>
+      
     </>
   )
 }
