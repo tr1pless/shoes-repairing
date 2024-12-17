@@ -5,6 +5,7 @@ import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import store from './components/store/store'
 import { Provider } from 'react-redux'
+import { AdComp } from './components/Adsense/Adsense'
 
 
 
@@ -16,6 +17,8 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <App />
+<AdComp/>
+
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

@@ -5,6 +5,7 @@ import { AdComp } from './components/Adsense/Adsense'
 function App() {
   return (
     <>
+    
       <Navigation />
 <AdComp/>
     </>
